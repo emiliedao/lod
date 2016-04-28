@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="MavenWebApp" />
+        <module name="Species" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MavenWebApp" target="1.5" />
+      <module name="Species" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
