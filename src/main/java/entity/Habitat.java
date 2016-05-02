@@ -1,11 +1,20 @@
 package entity;
 
+import javax.persistence.*;
 /**
  * Created by emiliedao on 4/28/16.
  */
+@Entity
+@Table(name = "habitat")
 public class Habitat {
+
+    @Id
     private int id;
+
+    @Column(name = "label")
     private String label;
+
+    @Column(name = "description")
     private String description;
 
     public Habitat() {

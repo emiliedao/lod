@@ -1,13 +1,27 @@
 package entity;
 
+import javax.persistence.*;
+
 /**
  * Created by emiliedao on 4/28/16.
  */
+@Entity
+@Table(name = "family")
 public class Family {
+    @Id
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "image")
+    @Lob
     private byte[] image;
+
+
     private Order order;
 
     public Family() {

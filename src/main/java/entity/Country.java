@@ -1,10 +1,18 @@
 package entity;
 
+import javax.persistence.*;
+
 /**
  * Created by emiliedao on 4/28/16.
  */
+@Entity
+@Table(name = "country")
 public class Country {
+
+    @Id
     private String id;
+
+    @Column(name = "name")
     private String name;
 
     public Country() {

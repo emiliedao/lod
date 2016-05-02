@@ -1,14 +1,28 @@
 package entity;
 
+import javax.persistence.*;
+
 /**
  * Created by emiliedao on 4/28/16.
  */
+@Entity
+@Table(name = "order")
 public class Order {
 
+    @Id
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "image")
+    @Lob
     private byte[] image;
+
+
     private BiologyClass biologyClass;
 
     public Order() {

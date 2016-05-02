@@ -6,17 +6,20 @@ import javax.persistence.*;
  * Created by emiliedao on 4/28/16.
  */
 @Entity
-@Table(name="class")
+@Table(name = "class")
 public class BiologyClass {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+//    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
 
-    @Column(name="description")
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "image")
+    @Lob
     private byte[] image;
 
     public BiologyClass() {

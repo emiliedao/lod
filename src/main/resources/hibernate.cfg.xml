@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!--  Parameters for database connection -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Species</property>
+        <property name="hibernate.connection.username">emilie</property>
+        <property name="hibernate.connection.password">emiliePassword</property>
+
+        <!-- Behavior for the conservation of tables -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <!-- Mapping files -->
+        <mapping class = "entity.BiologyClass"/>
+        <mapping class = "entity.ConservationStatus"/>
+        <mapping class = "entity.Country"/>
+        <mapping class = "entity.Family"/>
+        <mapping class = "entity.Habitat"/>
+        <mapping class = "entity.Measure"/>
+        <mapping class = "entity.Order"/>
+        <mapping class = "entity.Species"/>
+        <mapping class = "entity.Threat"/>
+        
+    </session-factory>
+
+</hibernate-configuration>

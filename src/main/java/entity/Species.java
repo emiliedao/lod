@@ -2,18 +2,37 @@ package entity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.persistence.*;
 
 /**
  * Created by emiliedao on 4/28/16.
  */
+@Entity
+@Table(name = "species")
 public class Species {
+
+    @Id
     private int id;
+
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "scientificName")
     private String scientificName;
+
+    @Column(name = "description")
     private String description;
+
+    @Column(name = "cooment")
     private String comment;
+
+    @Column(name = "count")
     private int count;
+
+    @Column(name = "image")
+    @Lob
     private byte[] image;
+
     private Order order;
     private ConservationStatus conservationStatus;
     private ArrayList<Habitat> habitats;
