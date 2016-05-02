@@ -35,7 +35,7 @@
 
 </head>
 
-<!-- The #page-top ID is part of the scrolling feature - the dataTest-spy and dataTest-target are part of the built-in Bootstrap scrollspy function -->
+<!-- The #page-top ID is part of the scrolling feature - the testLOD-spy and testLOD-target are part of the built-in Bootstrap scrollspy function -->
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
 

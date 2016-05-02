@@ -1,7 +1,7 @@
 import entity.BiologyClass;
-import org.apache.log4j.BasicConfigurator;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import utils.HibernateUtils;
 
 /**
  * Created by emiliedao on 5/2/16.
@@ -11,7 +11,7 @@ public class DBTest {
     public static void main(String args[]) {
 //        BasicConfigurator.configure();
 
-        Session s = new HibernateUtils().getSession();
+        Session s = HibernateUtils.getSession();
         Transaction t = s.beginTransaction();
 
         BiologyClass classTest = new BiologyClass();

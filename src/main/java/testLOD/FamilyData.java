@@ -1,4 +1,4 @@
-package dataTest;
+package testLOD;
 
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;

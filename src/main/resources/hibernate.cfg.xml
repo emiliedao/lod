@@ -25,7 +25,7 @@
         <mapping class = "entity.Order"/>
         <mapping class = "entity.Species"/>
         <mapping class = "entity.Threat"/>
-        
+
     </session-factory>
 
 </hibernate-configuration>
