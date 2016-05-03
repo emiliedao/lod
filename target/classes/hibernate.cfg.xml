@@ -16,11 +16,15 @@
         <property name="hbm2ddl.auto">create</property>
 
         <!-- Mapping files -->
-        <mapping class="entity.BiologyClass"/>
-
-        <!-- Display SQL logs -->
-
-
+        <mapping class = "entity.BiologyClass"/>
+        <mapping class = "entity.ConservationStatus"/>
+        <mapping class = "entity.Country"/>
+        <mapping class = "entity.Family"/>
+        <mapping class = "entity.Habitat"/>
+        <mapping class = "entity.Measure"/>
+        <mapping class = "entity.Order"/>
+        <mapping class = "entity.Species"/>
+        <mapping class = "entity.Threat"/>
 
     </session-factory>
 

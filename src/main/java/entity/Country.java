@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.HashMap;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -14,6 +15,12 @@ public class Country {
 
     @Column(name = "name")
     private String name;
+
+    @ElementCollection
+    @CollectionTable(name = "species_lives_in", joinColumns = @JoinColumn(name = "country_id"))
+    @MapKeyJoinColumn(name = "species_id")
+    @Column(name = "count")
+    private HashMap<Species, Integer> species;
 
     public Country() {
     }

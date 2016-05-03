@@ -1,5 +1,6 @@
 package dao;
 
+import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -36,7 +37,7 @@ public interface GenericIDao<T> {
      *
      * @return
      */
-    List<T> findAll();
+    List<T> findAll(Class<T> type);
 
 
 }

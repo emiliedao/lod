@@ -23,7 +23,7 @@ public class Species {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "cooment")
+    @Column(name = "comment")
     private String comment;
 
     @Column(name = "count")
@@ -33,17 +33,42 @@ public class Species {
     @Lob
     private byte[] image;
 
-    private Order order;
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "family_id")
+    private Family family;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "conservationStatus_id")
     private ConservationStatus conservationStatus;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "species_has_habitat",
+            joinColumns = @JoinColumn(name = "species_id"),
+            inverseJoinColumns = @JoinColumn(name = "habitat_id"))
     private ArrayList<Habitat> habitats;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "species_is_threatened_by",
+            joinColumns = @JoinColumn(name = "species_id"),
+            inverseJoinColumns = @JoinColumn(name = "threat_id"))
     private ArrayList<Threat> threats;
+
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "species_is_concerned_by",
+            joinColumns = @JoinColumn(name = "species_id"),
+            inverseJoinColumns = @JoinColumn(name = "measure_id"))
     private ArrayList<Measure> measures;
+
+    @ElementCollection
+    @CollectionTable(name = "species_lives_in", joinColumns = @JoinColumn(name = "species_id"))
+    @MapKeyJoinColumn(name = "country_id")
+    @Column(name = "count")
     private HashMap<Country, Integer> countries;
 
     public Species() {
     }
 
-    public Species(int id, String name, String scientificName, String description, String comment, int count, byte[] image, Order order, ConservationStatus conservationStatus, ArrayList<Habitat> habitats, ArrayList<Threat> threats, ArrayList<Measure> measures, HashMap<Country, Integer> countries) {
+    public Species(int id, String name, String scientificName, String description, String comment, int count, byte[] image) {
         this.id = id;
         this.name = name;
         this.scientificName = scientificName;
@@ -51,7 +76,17 @@ public class Species {
         this.comment = comment;
         this.count = count;
         this.image = image;
-        this.order = order;
+    }
+
+    public Species(int id, String name, String scientificName, String description, String comment, int count, byte[] image, Family family, ConservationStatus conservationStatus, ArrayList<Habitat> habitats, ArrayList<Threat> threats, ArrayList<Measure> measures, HashMap<Country, Integer> countries) {
+        this.id = id;
+        this.name = name;
+        this.scientificName = scientificName;
+        this.description = description;
+        this.comment = comment;
+        this.count = count;
+        this.image = image;
+        this.family = family;
         this.conservationStatus = conservationStatus;
         this.habitats = habitats;
         this.threats = threats;
@@ -115,12 +150,12 @@ public class Species {
         this.image = image;
     }
 
-    public Order getOrder() {
-        return order;
+    public Family getFamily() {
+        return family;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setFamily(Family family) {
+        this.family = family;
     }
 
     public ConservationStatus getConservationStatus() {

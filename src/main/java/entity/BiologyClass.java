@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -21,6 +22,9 @@ public class BiologyClass {
     @Column(name = "image")
     @Lob
     private byte[] image;
+
+    @OneToMany(mappedBy = "biologyClass")
+    private ArrayList<Order> orders;
 
     public BiologyClass() {
     }
@@ -62,5 +66,14 @@ public class BiologyClass {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "BiologyClass{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

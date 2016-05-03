@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -16,6 +17,9 @@ public class ConservationStatus {
 
     @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "conservationStatus")
+    private ArrayList<Species> species;
 
     public ConservationStatus() {
     }

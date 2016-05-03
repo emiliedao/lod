@@ -1,5 +1,7 @@
 package dao;
 
+import org.hibernate.Query;
+import org.hibernate.Session;
 import utils.HibernateUtils;
 
 import java.io.Serializable;
@@ -32,8 +34,11 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
         HibernateUtils.getSession().delete(object);
     }
 
-    public List<T> findAll() {
-        return null;
+    public List<T> findAll(Class<T> type) {
+        Session s = HibernateUtils.getSession();
+        List l = s.createQuery("from " + type.toString() + " o ").list();
+        s.close();
+        return l;
     }
 
 

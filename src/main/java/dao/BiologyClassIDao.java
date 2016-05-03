@@ -2,6 +2,8 @@ package dao;
 
 import entity.BiologyClass;
 
+import java.util.Collection;
+
 /**
  * Created by emiliedao on 5/2/16.
  */

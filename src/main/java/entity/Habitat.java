@@ -14,16 +14,17 @@ public class Habitat {
     @Column(name = "label")
     private String label;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "type")
+    private String type;
+
 
     public Habitat() {
     }
 
-    public Habitat(int id, String label, String description) {
+    public Habitat(int id, String label, String type) {
         this.id = id;
         this.label = label;
-        this.description = description;
+        this.type = type;
     }
 
     public int getId() {
@@ -42,11 +43,11 @@ public class Habitat {
         this.label = label;
     }
 
-    public String getDescription() {
-        return description;
+    public String getType() {
+        return type;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setType(String type) {
+        this.type = type;
     }
 }

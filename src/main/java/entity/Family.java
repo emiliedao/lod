@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -21,8 +22,12 @@ public class Family {
     @Lob
     private byte[] image;
 
-
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "order_id")
     private Order order;
+
+    @OneToMany(mappedBy = "family")
+    private ArrayList<Species> species;
 
     public Family() {
     }
