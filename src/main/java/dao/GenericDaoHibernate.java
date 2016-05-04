@@ -22,8 +22,12 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
         HibernateUtils.getSession().save(object);
     }
 
-    public T findById(T id) {
-        return (T)HibernateUtils.getSession().get(type, (Serializable)id);
+    public T findById(int id) {
+        return (T)HibernateUtils.getSession().get(type, id);
+    }
+
+    public T findById(String id) {
+        return (T)HibernateUtils.getSession().get(type, id);
     }
 
     public void update(T object) {
@@ -36,7 +40,7 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
 
     public List<T> findAll(Class<T> type) {
         Session s = HibernateUtils.getSession();
-        List l = s.createQuery("from " + type.toString() + " o ").list();
+        List l = s.createQuery("from " + type.getName()).list();
         s.close();
         return l;
     }

@@ -16,10 +16,17 @@ public interface GenericIDao<T> {
 
     /**
      * Retrieve an object that was previously persisted to the database using its id
-     * @param id the primary key of the object
+     * @param id the primary key of the object (int version)
      * @return the object corresponding to the given id
      */
-    T findById(T id);
+    T findById(int id);
+
+    /**
+     * Retrieve an object that was previously persisted to the database using its id
+     * @param id the primary key of the object (String version)
+     * @return the object corresponding to the given id
+     */
+    T findById(String id);
 
     /**
      * Save changes made to a persistent object

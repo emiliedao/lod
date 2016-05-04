@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -24,7 +24,7 @@ public class BiologyClass {
     private byte[] image;
 
     @OneToMany(mappedBy = "biologyClass")
-    private ArrayList<Order> orders;
+    private List<Order> orders;
 
     public BiologyClass() {
     }

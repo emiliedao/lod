@@ -1,6 +1,5 @@
-package test;
-
 import dao.BiologyClassDao;
+import dao.DaoFactory;
 import entity.BiologyClass;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,7 +15,7 @@ public class DBTest {
     /**
      * Test the creation of an instance of BiologyClass and its storage into the database
      */
-    private static void testCreate() {
+    private static void testCreateClass() {
         Transaction t = session.beginTransaction();
 
 //        Object creation
@@ -28,12 +27,18 @@ public class DBTest {
         t.commit();
     }
 
+    private static void testFindById() {
+        BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
+        BiologyClass biologyClass = biologyClassDao.findById(5);
+        System.out.println(biologyClass.toString());
+    }
+
 
     /**
      * Test the method findAll() which returns the list of all the entries from a table
      */
     private static void testFindAll() {
-        BiologyClassDao biologyClassDao = new BiologyClassDao();
+        BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         for (BiologyClass biologyClass : biologyClassDao.findAll(BiologyClass.class)) {
             System.out.println(biologyClass.toString());
         }
@@ -44,9 +49,9 @@ public class DBTest {
         session = HibernateUtils.getSession();
 
 //        Tests
-//        testCreate();
-        testFindAll();
+//        testCreateClass();
+//        testFindAll();
+        testFindById();
         session.close();
-
     }
 }
