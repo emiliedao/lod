@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,6 +12,8 @@ import java.util.List;
 public class Order {
 
     @Id
+    @Column(name = "order_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "name")
@@ -31,6 +34,13 @@ public class Order {
     private List<Family> families;
 
     public Order() {
+    }
+
+    public Order(String name, String description, byte[] image, BiologyClass biologyClass) {
+        this.name = name;
+        this.description = description;
+        this.image = image;
+        this.biologyClass = biologyClass;
     }
 
     public Order(int id, String name, String description, byte[] image, BiologyClass biologyClass) {
@@ -79,5 +89,17 @@ public class Order {
 
     public void setBiologyClass(BiologyClass biologyClass) {
         this.biologyClass = biologyClass;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", image=" + Arrays.toString(image) +
+                ", biologyClass=" + biologyClass +
+                ", families=" + families +
+                '}';
     }
 }

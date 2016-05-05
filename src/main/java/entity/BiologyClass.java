@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -10,7 +11,8 @@ import java.util.List;
 @Table(name = "class")
 public class BiologyClass {
     @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue
+    @Column(name = "class_id")
     private int id;
 
     @Column(name = "name")
@@ -23,7 +25,8 @@ public class BiologyClass {
     @Lob
     private byte[] image;
 
-    @OneToMany(mappedBy = "biologyClass")
+//    @OneToMany(mappedBy = "biologyClass")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "biologyClass", cascade = CascadeType.ALL)
     private List<Order> orders;
 
     public BiologyClass() {
@@ -68,12 +71,28 @@ public class BiologyClass {
         this.image = image;
     }
 
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
     @Override
     public String toString() {
-        return "BiologyClass{" +
+        String str = "BiologyClass{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                '}';
+                ", orders={" ;
+
+        for (Order order : orders) {
+            str += order.getName();
+            if (orders.indexOf(order) != orders.size() - 1)
+                str += ", ";
+        }
+        str += "} }";
+        return str;
     }
 }

@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Table(name = "measure")
 public class Measure {
     @Id
+    @Column(name = "measure_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "title")

@@ -9,6 +9,8 @@ import javax.persistence.*;
 public class Habitat {
 
     @Id
+    @Column(name = "habitat_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "label")

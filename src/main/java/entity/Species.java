@@ -12,6 +12,8 @@ import javax.persistence.*;
 public class Species {
 
     @Id
+    @Column(name = "species_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "name")

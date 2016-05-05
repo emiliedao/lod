@@ -11,9 +11,12 @@
         <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Species</property>
         <property name="hibernate.connection.username">emilie</property>
         <property name="hibernate.connection.password">emiliePassword</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.globally_quoted_identifiers">true</property>
+
 
         <!-- Behavior for the conservation of tables -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
 
         <!-- Mapping files -->
         <mapping class = "entity.BiologyClass"/>

@@ -10,6 +10,8 @@ import java.util.List;
 @Table(name = "family")
 public class Family {
     @Id
+    @Column(name = "family_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "name")

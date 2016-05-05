@@ -2,6 +2,7 @@ package dao;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import utils.HibernateUtils;
 
 import java.io.Serializable;
@@ -19,28 +20,52 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
     }
 
     public void create(T object) {
-        HibernateUtils.getSession().save(object);
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.save(object);
+        t.commit();
+        s.close();
     }
 
     public T findById(int id) {
-        return (T)HibernateUtils.getSession().get(type, id);
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        T object = (T)s.get(type, id);
+        t.commit();
+        s.close();
+        return object;
     }
 
     public T findById(String id) {
-        return (T)HibernateUtils.getSession().get(type, id);
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        T object = (T)s.get(type, id);
+        t.commit();
+        s.close();
+        return object;
     }
 
     public void update(T object) {
-        HibernateUtils.getSession().update(object);
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.update(object);
+        t.commit();
+        s.close();
     }
 
     public void delete(T object) {
-        HibernateUtils.getSession().delete(object);
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.delete(object);
+        t.commit();
+        s.close();
     }
 
     public List<T> findAll(Class<T> type) {
-        Session s = HibernateUtils.getSession();
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
         List l = s.createQuery("from " + type.getName()).list();
+        t.commit();
         s.close();
         return l;
     }

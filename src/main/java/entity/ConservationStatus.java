@@ -10,6 +10,8 @@ import java.util.List;
 @Table(name = "conservationStatus")
 public class ConservationStatus {
     @Id
+    @Column(name = "conservationStatus_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "label")

@@ -23,7 +23,15 @@ public class HibernateUtils {
     }
 
     // Return a Hibernate session whenever called
-    public static Session getSession() throws HibernateException {
-        return sessionFactory.openSession();
+//    public static Session getSession() throws HibernateException {
+//        return sessionFactory.openSession();
+//    }
+//
+//    public static Session getCurrentSession() throws HibernateException {
+//        return sessionFactory.getCurrentSession();
+//    }
+
+    public static SessionFactory getSessionFactory()throws HibernateException {
+        return sessionFactory;
     }
 }

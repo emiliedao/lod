@@ -10,6 +10,8 @@ import javax.persistence.*;
 public class Threat {
 
     @Id
+    @Column(name = "threat_id")
+    @GeneratedValue
     private int id;
 
     @Column(name = "title")

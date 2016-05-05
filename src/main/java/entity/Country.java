@@ -11,6 +11,8 @@ import java.util.Map;
 public class Country {
 
     @Id
+    @Column(name = "country_id")
+    @GeneratedValue
     private String id;
 
     @Column(name = "name")
