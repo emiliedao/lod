@@ -20,7 +20,8 @@ public class ConservationStatus {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "conservationStatus")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "conservationStatus",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private List<Species> species;
 
     public ConservationStatus() {

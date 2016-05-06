@@ -1,0 +1,39 @@
+package lod;
+
+import dao.BiologyClassDao;
+import dao.DaoFactory;
+import entity.BiologyClass;
+
+/**
+ * Created by emiliedao on 5/5/16.
+ */
+public class BiologyClassLOD extends ResourceLOD {
+
+    private String name = "Mammal";
+
+    public void loadBiologyClass() {
+
+//        Creation of biology class Mammal
+        BiologyClass mammals = new BiologyClass();
+        mammals.setName(name);
+        mammals.setDescription(super.getDbpediaDescription(name));
+        mammals.setImage(super.getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+
+        BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
+        biologyClassDao.create(mammals);
+    }
+
+
+    public void load() {
+        loadBiologyClass();
+    }
+
+    public void update() {
+        BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
+        BiologyClass mammal = biologyClassDao.findById(1);
+        mammal.setImage(super.getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+        biologyClassDao.update(mammal);
+
+    }
+
+}

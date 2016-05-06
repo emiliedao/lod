@@ -32,8 +32,7 @@ public class Species {
     private int count;
 
     @Column(name = "image")
-    @Lob
-    private byte[] image;
+    private String image;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "family_id")
@@ -70,7 +69,7 @@ public class Species {
     public Species() {
     }
 
-    public Species(int id, String name, String scientificName, String description, String comment, int count, byte[] image) {
+    public Species(int id, String name, String scientificName, String description, String comment, int count, String image) {
         this.id = id;
         this.name = name;
         this.scientificName = scientificName;
@@ -80,7 +79,7 @@ public class Species {
         this.image = image;
     }
 
-    public Species(int id, String name, String scientificName, String description, String comment, int count, byte[] image, Family family, ConservationStatus conservationStatus,List<Habitat> habitats, List<Threat> threats, List<Measure> measures, Map<Country, Integer> countries) {
+    public Species(int id, String name, String scientificName, String description, String comment, int count, String image, Family family, ConservationStatus conservationStatus,List<Habitat> habitats, List<Threat> threats, List<Measure> measures, Map<Country, Integer> countries) {
         this.id = id;
         this.name = name;
         this.scientificName = scientificName;
@@ -144,11 +143,11 @@ public class Species {
         this.count = count;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,27 +22,26 @@ public class Order {
     private String description;
 
     @Column(name = "image")
-    @Lob
-    private byte[] image;
+    private String image;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "class_id")
     private BiologyClass biologyClass;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
     private List<Family> families;
 
     public Order() {
     }
 
-    public Order(String name, String description, byte[] image, BiologyClass biologyClass) {
+    public Order(String name, String description, String image, BiologyClass biologyClass) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.biologyClass = biologyClass;
     }
 
-    public Order(int id, String name, String description, byte[] image, BiologyClass biologyClass) {
+    public Order(int id, String name, String description, String image, BiologyClass biologyClass) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -75,11 +73,11 @@ public class Order {
         this.description = description;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
@@ -97,7 +95,7 @@ public class Order {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", image=" + Arrays.toString(image) +
+                ", image=" + image +
                 ", biologyClass=" + biologyClass +
                 ", families=" + families +
                 '}';

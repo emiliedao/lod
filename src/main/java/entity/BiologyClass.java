@@ -1,7 +1,6 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,17 +21,15 @@ public class BiologyClass {
     private String description;
 
     @Column(name = "image")
-    @Lob
-    private byte[] image;
+    private String image;
 
-//    @OneToMany(mappedBy = "biologyClass")
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "biologyClass", cascade = CascadeType.ALL)
     private List<Order> orders;
 
     public BiologyClass() {
     }
 
-    public BiologyClass(int id, String name, String description, byte[] image) {
+    public BiologyClass(int id, String name, String description, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -63,11 +60,11 @@ public class BiologyClass {
         this.description = description;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

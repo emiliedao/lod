@@ -21,20 +21,19 @@ public class Family {
     private String description;
 
     @Column(name = "image")
-    @Lob
-    private byte[] image;
+    private String image;
 
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "order_id")
     private Order order;
 
-    @OneToMany(mappedBy = "family")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "family", cascade = CascadeType.ALL)
     private List<Species> species;
 
     public Family() {
     }
 
-    public Family(int id, String name, String description, byte[] image, Order order) {
+    public Family(int id, String name, String description, String image, Order order) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -66,11 +65,11 @@ public class Family {
         this.description = description;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
