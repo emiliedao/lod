@@ -14,7 +14,7 @@ import java.io.InputStream;
 /**
  * Created by emiliedao on 5/5/16.
  */
-public abstract class ResourceLOD {
+public abstract class LOD {
 
     protected String sparqlEndpoint = "http://dbpedia.org/sparql";
 

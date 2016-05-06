@@ -9,7 +9,7 @@ import java.util.HashMap;
 /**
  * Created by emiliedao on 4/15/16.
  */
-public abstract class FamilyData extends LinkedData {
+public abstract class FamilyData {
 
     protected String familyName;
 //    protected String description;

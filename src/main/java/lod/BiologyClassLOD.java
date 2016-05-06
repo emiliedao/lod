@@ -7,7 +7,7 @@ import entity.BiologyClass;
 /**
  * Created by emiliedao on 5/5/16.
  */
-public class BiologyClassLOD extends ResourceLOD {
+public class BiologyClassLOD extends LOD {
 
     private String name = "Mammal";
 
@@ -16,8 +16,8 @@ public class BiologyClassLOD extends ResourceLOD {
 //        Creation of biology class Mammal
         BiologyClass mammals = new BiologyClass();
         mammals.setName(name);
-        mammals.setDescription(super.getDbpediaDescription(name));
-        mammals.setImage(super.getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+        mammals.setDescription(getDbpediaDescription(name));
+        mammals.setImage(getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
 
         BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         biologyClassDao.create(mammals);
@@ -31,7 +31,7 @@ public class BiologyClassLOD extends ResourceLOD {
     public void update() {
         BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         BiologyClass mammal = biologyClassDao.findById(1);
-        mammal.setImage(super.getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+        mammal.setImage(getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
         biologyClassDao.update(mammal);
 
     }

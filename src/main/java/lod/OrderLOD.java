@@ -19,7 +19,7 @@ import java.util.ArrayList;
 /**
  * Created by emiliedao on 5/6/16.
  */
-public class OrderLOD extends ResourceLOD {
+public class OrderLOD extends LOD {
     private String rdfFile = "src/main/resources/rdf/Mammal.rdf";
 
     /**
@@ -88,9 +88,9 @@ public class OrderLOD extends ResourceLOD {
 
 //        For each order, add description, image and biology class and store it into the database
         for (Order order : orders) {
-            order.setDescription(super.getDbpediaDescription(order.getName()));
+            order.setDescription(getDbpediaDescription(order.getName()));
             String rdfFile = "src/main/resources/rdf/orders/" + order.getName() + ".rdf";
-            order.setImage(super.getBBCpicture(rdfFile));
+            order.setImage(getBBCpicture(rdfFile));
             order.setBiologyClass(mammal);
             orderDao.create(order);
         }

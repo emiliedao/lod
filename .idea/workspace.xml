@@ -2,43 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a50a6562-657c-4f5b-b460-10de789b6276" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_4_01.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/lod/LoadLOD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/lod/OrderLOD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/lod/ResourceLOD.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/testLOD/FamilyData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/testLOD/FelidaeData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/testLOD/LinkedData.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_12.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/testLOD/FamilyData.java" afterPath="$PROJECT_DIR$/src/main/java/lod/FamilyData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/testLOD/FelidaeData.java" afterPath="$PROJECT_DIR$/src/main/java/lod/FelidaeData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/testLOD/LinkedData.java" afterPath="$PROJECT_DIR$/src/main/java/lod/LinkedData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/BiologyClass.class" afterPath="$PROJECT_DIR$/target/classes/entity/BiologyClass.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/ConservationStatus.class" afterPath="$PROJECT_DIR$/target/classes/entity/ConservationStatus.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Family.class" afterPath="$PROJECT_DIR$/target/classes/entity/Family.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Order.class" afterPath="$PROJECT_DIR$/target/classes/entity/Order.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/servlet/FelidaeServlet.class" afterPath="$PROJECT_DIR$/target/classes/servlet/FelidaeServlet.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/servlet.war" afterPath="$PROJECT_DIR$/target/servlet.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Species_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Species_war.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/Species_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Species_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/lod/FamilyLOD.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/lod/LinkedData.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/lod/ResourceLOD.java" afterPath="$PROJECT_DIR$/src/main/java/lod/LOD.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Species.iml" afterPath="$PROJECT_DIR$/Species.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/BiologyClass.java" afterPath="$PROJECT_DIR$/src/main/java/entity/BiologyClass.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/ConservationStatus.java" afterPath="$PROJECT_DIR$/src/main/java/entity/ConservationStatus.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/Family.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Family.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/Order.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/Species.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Species.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/servlet/FelidaeServlet.java" afterPath="$PROJECT_DIR$/src/main/java/servlet/FelidaeServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/js/jquery.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/jquery.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java" afterPath="$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lod/FamilyData.java" afterPath="$PROJECT_DIR$/src/main/java/lod/FamilyData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lod/LoadLOD.java" afterPath="$PROJECT_DIR$/src/main/java/lod/LoadLOD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/lod/OrderLOD.java" afterPath="$PROJECT_DIR$/src/main/java/lod/OrderLOD.java" />
     </list>
     <ignored path="MavenWebApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -108,12 +79,12 @@
       <file leaf-file-name="BiologyClassLOD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+            <state relative-caret-position="265">
+              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-                <element signature="e#722#723#0" expanded="true" />
+                <element signature="e#668#669#0" expanded="true" />
+                <element signature="e#702#703#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,35 +93,38 @@
       <file leaf-file-name="OrderLOD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lod/OrderLOD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="84" column="58" selection-start-line="83" selection-start-column="8" selection-end-line="84" selection-end-column="58" />
+            <state relative-caret-position="-170">
+              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1301#1308#0" expanded="true" />
-                <element signature="e#3008#3009#0" expanded="true" />
-                <element signature="e#3036#3037#0" expanded="true" />
+                <element signature="e#1293#1300#0" expanded="true" />
+                <element signature="e#2988#2989#0" expanded="true" />
+                <element signature="e#3016#3017#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoadLOD.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoadLOD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/lod/LoadLOD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
+            <state relative-caret-position="340">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResourceLOD.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lod/ResourceLOD.java">
+      <file leaf-file-name="FamilyLOD.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lod/FamilyLOD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="111" column="34" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
+            <state relative-caret-position="110">
+              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1125#1133#0" expanded="true" />
+                <element signature="e#2738#2739#0" expanded="true" />
+                <element signature="e#2768#2769#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,8 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/dao/impl/BiologyClassDAOInterface.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/packagetest/BiologyClassDAOInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/interfaces/BiologyClassDAOInterface.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/impl/BiologyClassDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/BiologyClassDAOImpl.java" />
@@ -247,9 +219,11 @@
         <option value="$PROJECT_DIR$/src/main/java/entity/Order.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Species.java" />
         <option value="$PROJECT_DIR$/src/main/java/lod/ResourceLOD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lod/LOD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lod/LoadLOD.java" />
         <option value="$PROJECT_DIR$/src/main/java/lod/OrderLOD.java" />
         <option value="$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java" />
-        <option value="$PROJECT_DIR$/src/main/java/lod/LoadLOD.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lod/FamilyLOD.java" />
       </list>
     </option>
   </component>
@@ -1138,12 +1112,12 @@
       <workItem from="1462253507011" duration="4562000" />
       <workItem from="1462334128147" duration="9205000" />
       <workItem from="1462415107943" duration="13419000" />
-      <workItem from="1462497358926" duration="9551000" />
+      <workItem from="1462497358926" duration="11477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96261000" />
+    <option name="totallyTimeSpent" value="98187000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -1206,13 +1180,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3600">
-          <caret line="240" column="38" selection-start-line="240" selection-start-column="38" selection-end-line="240" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/interface/BiologyClassDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/impl/BiologyClassDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/CountryIDao.java">
@@ -1247,6 +1214,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+          <folding>
+            <element signature="e#186#187#0" expanded="false" />
+            <element signature="e#221#222#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1492,32 +1463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lod/FamilyData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lod/FelidaeData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lod/LinkedData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/BiologyClassDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1537,14 +1482,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/Habitat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Measure.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
@@ -1621,46 +1558,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lod/ResourceLOD.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/LinkedData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="111" column="34" selection-start-line="111" selection-start-column="34" selection-end-line="111" selection-end-column="34" />
+        <state relative-caret-position="105">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/FelidaeData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/FamilyData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/LOD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1070">
+          <caret line="18" column="65" selection-start-line="18" selection-start-column="65" selection-end-line="18" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Measure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/LoadLOD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lod/BiologyClassLOD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+        <state relative-caret-position="265">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#668#669#0" expanded="true" />
+            <element signature="e#702#703#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lod/OrderLOD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="84" column="58" selection-start-line="83" selection-start-column="8" selection-end-line="84" selection-end-column="58" />
+        <state relative-caret-position="-170">
+          <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1301#1308#0" expanded="true" />
-            <element signature="e#3008#3009#0" expanded="true" />
-            <element signature="e#3036#3037#0" expanded="true" />
+            <element signature="e#1293#1300#0" expanded="true" />
+            <element signature="e#2988#2989#0" expanded="true" />
+            <element signature="e#3016#3017#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lod/LoadLOD.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/lod/FamilyLOD.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="33" selection-start-line="10" selection-start-column="33" selection-end-line="10" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="110">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1125#1133#0" expanded="true" />
+            <element signature="e#2738#2739#0" expanded="true" />
+            <element signature="e#2768#2769#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
