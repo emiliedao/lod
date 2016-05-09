@@ -11,8 +11,7 @@ import java.util.List;
 public class ConservationStatus {
     @Id
     @Column(name = "conservationStatus_id")
-    @GeneratedValue
-    private int id;
+    private String id;
 
     @Column(name = "label")
     private String label;
@@ -27,17 +26,17 @@ public class ConservationStatus {
     public ConservationStatus() {
     }
 
-    public ConservationStatus(int id, String label, String description) {
+    public ConservationStatus(String id, String label, String description) {
         this.id = id;
         this.label = label;
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -56,4 +55,6 @@ public class ConservationStatus {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 }

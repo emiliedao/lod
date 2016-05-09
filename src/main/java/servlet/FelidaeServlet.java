@@ -1,6 +1,6 @@
 package servlet;
 
-import lod.FelidaeData;
+import data.FelidaeData;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

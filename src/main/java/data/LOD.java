@@ -1,4 +1,4 @@
-package lod;
+package data;
 
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;
@@ -14,7 +14,7 @@ import java.io.InputStream;
 /**
  * Created by emiliedao on 5/5/16.
  */
-public abstract class LOD {
+public abstract class LOD extends Data {
 
     protected String sparqlEndpoint = "http://dbpedia.org/sparql";
 
@@ -107,8 +107,5 @@ public abstract class LOD {
 
         return imageURL;
     }
-
-    public abstract void load();
-    public abstract void update();
 
 }

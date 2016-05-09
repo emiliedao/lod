@@ -1,4 +1,4 @@
-package lod;
+package data;
 
 import dao.BiologyClassDao;
 import dao.DaoFactory;

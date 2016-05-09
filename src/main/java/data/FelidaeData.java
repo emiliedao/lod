@@ -1,4 +1,4 @@
-package lod;
+package data;
 
 /**
  * Created by emiliedao on 4/14/16.

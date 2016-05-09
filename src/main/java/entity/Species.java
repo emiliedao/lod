@@ -198,4 +198,5 @@ public class Species {
     public void setCountries(Map<Country, Integer> countries) {
         this.countries = countries;
     }
+
 }

@@ -1,4 +1,4 @@
-package lod;
+package data;
 
 import dao.DaoFactory;
 import dao.FamilyDao;
