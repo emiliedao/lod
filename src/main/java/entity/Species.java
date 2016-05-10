@@ -1,7 +1,6 @@
 package entity;
 
 import java.util.List;
-import java.util.Map;
 import javax.persistence.*;
 
 /**
@@ -42,29 +41,29 @@ public class Species {
     @JoinColumn(name = "conservationStatus_id")
     private ConservationStatus conservationStatus;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "species_has_habitat",
             joinColumns = @JoinColumn(name = "species_id"),
             inverseJoinColumns = @JoinColumn(name = "habitat_id"))
     private List<Habitat> habitats;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "species_is_threatened_by",
             joinColumns = @JoinColumn(name = "species_id"),
             inverseJoinColumns = @JoinColumn(name = "threat_id"))
     private List<Threat> threats;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "species_is_concerned_by",
             joinColumns = @JoinColumn(name = "species_id"),
             inverseJoinColumns = @JoinColumn(name = "measure_id"))
     private List<Measure> measures;
 
-    @ElementCollection
-    @CollectionTable(name = "species_lives_in", joinColumns = @JoinColumn(name = "species_id"))
-    @MapKeyJoinColumn(name = "country_id")
-    @Column(name = "count")
-    private Map<Country, Integer> countries;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinTable(name = "species_lives_in",
+            joinColumns = @JoinColumn(name = "species_id"),
+            inverseJoinColumns = @JoinColumn(name = "country_id"))
+    private List<Country> countries;
 
     public Species() {
     }
@@ -77,22 +76,6 @@ public class Species {
         this.comment = comment;
         this.count = count;
         this.image = image;
-    }
-
-    public Species(int id, String name, String scientificName, String description, String comment, int count, String image, Family family, ConservationStatus conservationStatus,List<Habitat> habitats, List<Threat> threats, List<Measure> measures, Map<Country, Integer> countries) {
-        this.id = id;
-        this.name = name;
-        this.scientificName = scientificName;
-        this.description = description;
-        this.comment = comment;
-        this.count = count;
-        this.image = image;
-        this.family = family;
-        this.conservationStatus = conservationStatus;
-        this.habitats = habitats;
-        this.threats = threats;
-        this.measures = measures;
-        this.countries = countries;
     }
 
     public int getId() {
@@ -175,6 +158,10 @@ public class Species {
         this.habitats = habitats;
     }
 
+    public void addHabitat(Habitat habitat) {
+        habitats.add(habitat);
+    }
+
     public List<Threat> getThreats() {
         return threats;
     }
@@ -182,6 +169,8 @@ public class Species {
     public void setThreats(List<Threat> threats) {
         this.threats = threats;
     }
+
+    public void addThreat(Threat threat) { threats.add(threat); }
 
     public List<Measure> getMeasures() {
         return measures;
@@ -191,12 +180,16 @@ public class Species {
         this.measures = measures;
     }
 
-    public Map<Country, Integer> getCountries() {
+    public void addMeasure(Measure measure) { measures.add(measure); }
+
+    public List<Country> getCountries() {
         return countries;
     }
 
-    public void setCountries(Map<Country, Integer> countries) {
+    public void setCountries(List<Country> countries) {
         this.countries = countries;
     }
+
+    public void addCountry(Country country) { countries.add(country); }
 
 }

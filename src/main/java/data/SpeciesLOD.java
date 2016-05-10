@@ -1,14 +1,14 @@
 package data;
 
-import dao.ConservationStatusDao;
-import dao.DaoFactory;
-import dao.FamilyDao;
-import dao.SpeciesDao;
-import entity.ConservationStatus;
-import entity.Family;
-import entity.Species;
+import dao.*;
+import entity.*;
+import org.apache.commons.io.IOUtils;
 import org.apache.jena.query.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 /**
@@ -16,8 +16,11 @@ import java.util.ArrayList;
  */
 public class SpeciesLOD extends LOD {
 
+    public String IUCN_Token = "72a46a72cd71144d445d6ce0d8ccb67709db20ca995dbe9635155d7ec6284207";
+
     /**
      * Retrieve from DPpedia all the species belonging to a family and store them into the database
+     *
      * @param family the family from which the species are loaded
      */
     public void loadSpecies(Family family) {
@@ -52,9 +55,8 @@ public class SpeciesLOD extends LOD {
             SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
             ConservationStatusDao conservationStatusDao = DaoFactory.getConservationStatusDao();
 
-            for ( ; results.hasNext() ; )
-            {
-                QuerySolution soln = results.nextSolution() ;
+            for (; results.hasNext(); ) {
+                QuerySolution soln = results.nextSolution();
 
                 Species species = new Species();
                 species.setName(soln.getLiteral("name").getString());
@@ -82,6 +84,167 @@ public class SpeciesLOD extends LOD {
         }
     }
 
+    public void loadHabitats(Species species) {
+        String url = null;
+        String formattedName = species.getScientificName().replace(" ", "%20");
+        url = "http://apiv3.iucnredlist.org/api/v3/habitats/species/name/" + formattedName + "?token=" + IUCN_Token;
+
+        try {
+            String jsonString = IOUtils.toString(new URL(url));
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parseWithException(jsonString);
+            JSONArray result = (JSONArray) jsonObject.get("result");
+
+            HabitatDao habitatDao = DaoFactory.getHabitatDao();
+            SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+
+
+            for (int i = 0; i < result.size(); i++) {
+                JSONObject o = (JSONObject) result.get(i);
+                String label = (String)o.get("habitat");
+                Habitat habitat = habitatDao.findByLabel(label);
+
+//                if (habitat == null) {
+//                    habitat = new Habitat();
+//                    habitat.setLabel(label);
+//                    habitatDao.create(habitat);
+//                }
+
+                species.addHabitat(habitat);
+                speciesDao.update(species);
+
+                System.out.println(species.getName() + " lives in " + habitat.toString());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void loadThreats(Species species) {
+        String url = null;
+        String formattedName = species.getScientificName().replace(" ", "%20");
+        url = "http://apiv3.iucnredlist.org/api/v3/threats/species/name/" + formattedName + "?token=" + IUCN_Token;
+
+        try {
+            String jsonString = IOUtils.toString(new URL(url));
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parseWithException(jsonString);
+            JSONArray result = (JSONArray) jsonObject.get("result");
+
+            ThreatDao threatDao = DaoFactory.getThreatDao();
+            SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+
+
+            for (int i = 0; i < result.size(); i++) {
+                JSONObject o = (JSONObject) result.get(i);
+                String title = (String)o.get("title");
+
+                if (title != null) {
+                    Threat threat = threatDao.findByTitle(title);
+
+//                    if (threat == null) {
+//                        threat = new Threat();
+//                        threat.setTitle(title);
+//                        threatDao.create(threat);
+//                    }
+
+                    species.addThreat(threat);
+                    speciesDao.update(species);
+
+                    System.out.println(species.getName() + " is threatened by " + threat.toString());
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadMeasures(Species species) {
+        String url = null;
+        String formattedName = species.getScientificName().replace(" ", "%20");
+        url = "http://apiv3.iucnredlist.org/api/v3/measures/species/name/" + formattedName + "?token=" + IUCN_Token;
+
+        try {
+            String jsonString = IOUtils.toString(new URL(url));
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parseWithException(jsonString);
+            JSONArray result = (JSONArray) jsonObject.get("result");
+
+            MeasureDao measureDao = DaoFactory.getMeasureDao();
+            SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+
+
+            for (int i = 0; i < result.size(); i++) {
+                JSONObject o = (JSONObject) result.get(i);
+                String title = (String)o.get("title");
+
+                if (title != null) {
+                    Measure measure = measureDao.findByTitle(title);
+
+                    if (measure == null) {
+                        measure = new Measure();
+                        measure.setTitle(title);
+                        measureDao.create(measure);
+                    }
+
+                    species.addMeasure(measure);
+                    speciesDao.update(species);
+
+                    System.out.println(species.getName() + " is concerned by " + measure.toString());
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void loadCountries(Species species) {
+        String url = null;
+        String formattedName = species.getScientificName().replace(" ", "%20");
+        url = "http://apiv3.iucnredlist.org/api/v3/species/countries/name/" + formattedName + "?token=" + IUCN_Token;
+
+        try {
+            String jsonString = IOUtils.toString(new URL(url));
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parseWithException(jsonString);
+            JSONArray result = (JSONArray) jsonObject.get("result");
+
+            CountryDao countryDao = DaoFactory.getCountryDao();
+            SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+
+
+            for (int i = 0; i < result.size(); i++) {
+                JSONObject o = (JSONObject) result.get(i);
+                String name = (String)o.get("country");
+                String id = (String)o.get("code");
+
+                if (id != null) {
+                    Country country = countryDao.findById(id);
+
+                    if (country == null) {
+                        country = new Country(id, name);
+                        countryDao.create(country);
+                    }
+
+                    species.addCountry(country);
+                    speciesDao.update(species);
+
+                    System.out.println(species.getName() + " is located in " + country.toString());
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void load() {
         FamilyDao familyDao = DaoFactory.getFamilyDao();
         ArrayList<Family> families = (ArrayList<Family>) familyDao.findAll(Family.class);
@@ -92,6 +255,27 @@ public class SpeciesLOD extends LOD {
     }
 
     public void update() {
+        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+        ArrayList<Species> species = (ArrayList<Species>) speciesDao.findAll(Species.class);
+
+        for (Species s : species) {
+            if (s.getHabitats().isEmpty()) {
+                loadHabitats(s);
+            }
+
+            if (s.getThreats().isEmpty()) {
+                loadThreats(s);
+            }
+
+            if (s.getMeasures().isEmpty()) {
+                loadMeasures(s);
+            }
+
+            if (s.getCountries().isEmpty()) {
+                loadCountries(s);
+            }
+
+        }
 
     }
 }

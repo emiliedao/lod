@@ -1,5 +1,6 @@
 package data;
 
+import org.apache.jena.ext.com.google.common.util.concurrent.ExecutionError;
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
@@ -10,6 +11,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 /**
  * Created by emiliedao on 5/5/16.
@@ -66,19 +68,19 @@ public abstract class LOD extends Data {
      * @param file the RDF fie
      * @return the URL of the picture
      */
-    public String getBBCpicture(String file) {
+    public String getBBCImage(String file) {
 
         Model model = ModelFactory.createDefaultModel();
         InputStream in = null;
 
-        String ordersQuery = "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
+        String BBCImageQuery = "PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n" +
                 "\n" +
                 "SELECT ?image\n" +
                 "WHERE \n" +
                 "{\n" +
                 "?image foaf:depicts ?resource\n" +
                 "}\n";
-        Query query = QueryFactory.create(ordersQuery);
+        Query query = QueryFactory.create(BBCImageQuery);
 
 //      Execute the query and obtain results
         QueryExecution qe = QueryExecutionFactory.create(query, model);

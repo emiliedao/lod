@@ -34,6 +34,7 @@ public class LoadData {
 //        conservationStatusData.load();
 
         SpeciesLOD speciesLOD = new SpeciesLOD();
-        speciesLOD.load();
+//        speciesLOD.load();
+        speciesLOD.update();
     }
 }

@@ -17,7 +17,7 @@ public class BiologyClassLOD extends LOD {
         BiologyClass mammals = new BiologyClass();
         mammals.setName(name);
         mammals.setDescription(getDbpediaDescription(name));
-        mammals.setImage(getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+        mammals.setImage(getBBCImage("src/main/resources/rdf/Mammal.rdf"));
 
         BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         biologyClassDao.create(mammals);
@@ -31,7 +31,7 @@ public class BiologyClassLOD extends LOD {
     public void update() {
         BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         BiologyClass mammal = biologyClassDao.findById(1);
-        mammal.setImage(getBBCpicture("src/main/resources/rdf/Mammal.rdf"));
+        mammal.setImage(getBBCImage("src/main/resources/rdf/Mammal.rdf"));
         biologyClassDao.update(mammal);
 
     }

@@ -90,7 +90,7 @@ public class OrderLOD extends LOD {
         for (Order order : orders) {
             order.setDescription(getDbpediaDescription(order.getName()));
             String rdfFile = "src/main/resources/rdf/orders/" + order.getName() + ".rdf";
-            order.setImage(getBBCpicture(rdfFile));
+            order.setImage(getBBCImage(rdfFile));
             order.setBiologyClass(mammal);
             orderDao.create(order);
         }

@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -16,6 +17,9 @@ public class Threat {
 
     @Column(name = "title")
     private String title;
+
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "threats")
+    private List<Species> species;
 
     public Threat() {
     }
@@ -39,5 +43,13 @@ public class Threat {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    @Override
+    public String toString() {
+        return "Threat{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
     }
 }

@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.Map;
+import java.util.List;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -12,17 +12,13 @@ public class Country {
 
     @Id
     @Column(name = "country_id")
-    @GeneratedValue
     private String id;
 
     @Column(name = "name")
     private String name;
 
-    @ElementCollection
-    @CollectionTable(name = "species_lives_in", joinColumns = @JoinColumn(name = "country_id"))
-    @MapKeyJoinColumn(name = "species_id")
-    @Column(name = "count")
-    private Map<Species, Integer> species;
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "countries")
+    private List<Species> species;
 
     public Country() {
     }
@@ -46,5 +42,13 @@ public class Country {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

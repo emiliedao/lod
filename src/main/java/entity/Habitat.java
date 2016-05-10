@@ -1,6 +1,8 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.List;
+
 /**
  * Created by emiliedao on 4/28/16.
  */
@@ -16,17 +18,16 @@ public class Habitat {
     @Column(name = "label")
     private String label;
 
-    @Column(name = "type")
-    private String type;
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "habitats")
+    private List<Species> species;
 
 
     public Habitat() {
     }
 
-    public Habitat(int id, String label, String type) {
+    public Habitat(int id, String label) {
         this.id = id;
         this.label = label;
-        this.type = type;
     }
 
     public int getId() {
@@ -45,11 +46,19 @@ public class Habitat {
         this.label = label;
     }
 
-    public String getType() {
-        return type;
+    public List<Species> getSpecies() {
+        return species;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setSpecies(List<Species> species) {
+        this.species = species;
+    }
+
+    @Override
+    public String toString() {
+        return "Habitat{" +
+                "id=" + id +
+                ", label='" + label + '\'' +
+                '}';
     }
 }
