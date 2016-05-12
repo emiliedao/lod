@@ -20,6 +20,7 @@
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
     <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -99,7 +100,6 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Species</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet</p>
 
                     <%--<p><c:out value="Text displayed with JSTL"/></p>--%>
 
@@ -112,7 +112,7 @@
                     <%--</c:url>">Change your name</a>--%>
                     <%--</p>--%>
 
-                    <p><a href="/mammals">Mammals</a> </p>
+                    <p class="lead"><a href="/mammals">Mammals</a> </p>
 
                     <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
 
@@ -229,15 +229,15 @@
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#species">About</a>
+                        <a class="page-scroll" href="#species">Species</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#wildlife">Services</a>
+                        <a class="page-scroll" href="#wildlife">Endangered wildlife</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#news">Contact</a>
+                        <a class="page-scroll" href="#">Contact</a>
                     </li>
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>

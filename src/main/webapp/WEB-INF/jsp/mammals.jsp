@@ -26,10 +26,12 @@
 
     <!-- Custom CSS -->
     <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+          type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +45,6 @@
 <body>
 
 <!-- Navigation -->
-<!-- Navigation -->
 <c:import url="navbar.jsp"></c:import>
 
 
@@ -54,7 +55,8 @@
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Mammals
-            <small>Class</small></h1>
+                <small>Class</small>
+            </h1>
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a>
                 </li>
@@ -66,12 +68,13 @@
 
     <!-- Intro Content -->
     <div class="row">
-        <div class="col-md-6">
-            <img class="img-responsive" src="${ requestScope.mammalsImg }" alt="">
-        </div>
-        <div class="col-md-6">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <img class="img-responsive img-thumbnail" src="${ mammal.image }" alt=""
+                     style="margin-right: 17px; margin-bottom: 10px; ">
+            </div>
             <h2>About mammals</h2>
-            <p>${ requestScope.mammalsDescription }</p>
+            <p>${ mammal.description }</p>
         </div>
     </div>
     <!-- /.row -->
@@ -81,65 +84,20 @@
         <div class="col-lg-12">
             <h2 class="page-header">Orders</h2>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
 
-                </div>
-            </div>
-        </div>
+        <c:forEach items="${ orders }" var="order">
         <div class="col-md-4 text-center">
             <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-                </div>
+                <a href="<c:url value="/mammals/order"><c:param name="name" value="${ order.name }"/></c:url>">
+                    <img class="img-responsive img-hover" src="${ order.image }" alt="">
+                    <div class="caption">
+                        <h3>${ order.name }</a></h3>
+                        <p>${ order.description }</p>
+                    </div>
             </div>
         </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
+        </c:forEach>
 
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 text-center">
-            <div class="thumbnail">
-                <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-                <div class="caption">
-                    <h3>John Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste saepe et quisquam nesciunt maxime.</p>
-
-                </div>
-            </div>
-        </div>
     </div>
     <!-- /.row -->
 
@@ -149,7 +107,7 @@
     <footer>
         <div class="row">
             <div class="col-lg-12">
-                <p>Copyright &copy; Your Website 2014</p>
+                <p>Copyright &copy; Into The Wild 2016</p>
             </div>
         </div>
     </footer>

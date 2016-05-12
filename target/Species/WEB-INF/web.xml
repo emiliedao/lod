@@ -21,6 +21,11 @@
         <servlet-class>servlet.FelidaeServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>servlet.OrderServlet</servlet-class>
+    </servlet>
+
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

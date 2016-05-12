@@ -89,6 +89,14 @@ public class Order {
         this.biologyClass = biologyClass;
     }
 
+    public List<Family> getFamilies() {
+        return families;
+    }
+
+    public void setFamilies(List<Family> families) {
+        this.families = families;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
