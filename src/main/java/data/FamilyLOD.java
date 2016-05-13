@@ -89,11 +89,30 @@ public class FamilyLOD extends LOD {
         }
     }
 
+    public void loadImages() {
+        String url = "http://ichef.bbci.co.uk/naturelibrary/images/ic/640x360/";
+
+        FamilyDao familyDao = DaoFactory.getFamilyDao();
+        for (Family family : familyDao.findAll(Family.class)) {
+            String name = family.getName().toLowerCase();
+            String img = url +
+                    name.substring(0, 1) +
+                    "/" + name.substring(0, 2) +
+                    "/" + name +
+                    "/" + name + "_1.jpg";
+
+            System.out.println(img);
+
+            family.setImage(img);
+            familyDao.update(family);
+        }
+    }
+
     public void load() {
         loadFamilies();
     }
 
     public void update() {
-
+        loadImages();
     }
 }

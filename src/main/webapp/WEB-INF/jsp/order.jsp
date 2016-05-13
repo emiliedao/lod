@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +45,8 @@
 
 <body>
 
+<c:set var="orderName" value="${fn:replace(order.name, '_', ' ')}" />
+
 <!-- Navigation -->
 <c:import url="navbar.jsp"></c:import>
 
@@ -53,29 +56,39 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">${ order.name }
+            <h1 class="page-header">${ orderName }
                 <small>Order</small></h1>
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/mammals">Mammals</a></li>
-                <li class="active">${ order.name }</li>
+                <li class="active">${ orderName }</li>
             </ol>
         </div>
     </div>
     <!-- /.row -->
 
+    <div class="row">
+        <div class="col-lg-12">
+            <p>${ order.description }</p>
+        </div>
+    </div>
+
+    <h2>Families</h2>
+    <hr>
+
     <!-- Families -->
     <c:forEach items="${ families }" var="family">
-    <div class="row">
+    <c:set var="familyName" value="${fn:replace(family.name, '_', ' ')}" />
+        <div class="row">
         <div class="col-md-5">
             <a href="#">
-                <img class="img-responsive img-hover" src="http://placehold.it/700x300" alt="">
+                <img class="img-responsive img-hover" src="${ family.image }" alt="">
             </a>
         </div>
         <div class="col-md-7">
-            <h3>${ family.name }</h3>
+            <h3>
+                <a href="<c:url value="/family"><c:param name="name" value="${ family.name }"/></c:url>"> ${ familyName }</a></h3>
             <p>${ family.description }</p>
-            <a class="btn btn-primary" href="portfolio-item.html">View family</a>
         </div>
     </div>
     <hr>

@@ -112,10 +112,11 @@
                     <%--</c:url>">Change your name</a>--%>
                     <%--</p>--%>
 
-                    <p class="lead"><a href="/mammals">Mammals</a> </p>
+                    <%--<p class="lead"><a href="/mammals">Mammals</a> </p>--%>
 
                     <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
 
+                    <p><a class="btn btn-primary" href="/mammals">Discover mammals</a></p>
 
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -142,9 +143,12 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Endangered wildlife</h2>
-                    <p class="lead"><a href="/felidae">Text</a></p>
+                    <%--<p class="lead"><a href="/felidae">Text</a></p>--%>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
+
+                    <p><a class="btn btn-primary" href="#">View</a></p>
+
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
                     <img class="img-responsive" src="img/artic-wolf.jpg" alt="">
@@ -171,8 +175,10 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">News</h2>
-                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank">Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font
-                        Awesome</a>.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
+
+                    <p><a class="btn btn-primary" href="#">Consult news</a></p>
+
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
                     <img class="img-responsive" src="img/panda.jpg" alt="">
@@ -199,14 +205,19 @@
             <div class="col-lg-6">
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="http://wiki.dbpedia.org" target="_blank" class="btn btn-default btn-lg"><span class="network-name">DBpedia</span></a>
+                        <a href="http://wiki.dbpedia.org" target="_blank" class="btn btn-default btn-lg">
+                            <%--<i class="fa fa-wikipedia-w"></i>--%>
+                            <span class="network-name">DBpedia</span></a>
                     </li>
                     <li>
-                        <a href="http://www.bbc.co.uk/nature/wildlife" target="_blank" class="btn btn-default btn-lg"><span class="network-name">BBC Wildlife finder</span></a>
+                        <a href="http://www.bbc.co.uk/nature/wildlife" target="_blank" class="btn btn-default btn-lg">
+                            <%--<i class="fa fa-television"></i>--%>
+                            <span class="network-name">BBC Wildlife finder</span></a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-default btn-lg"><span
-                                class="network-name">IUCN Red List</span></a>
+                        <a href="#" class="btn btn-default btn-lg">
+                            <%--<i class="fa fa-list"></i>--%>
+                            <span class="network-name">IUCN Red List</span></a>
                     </li>
                 </ul>
             </div>
@@ -240,7 +251,7 @@
                         <a class="page-scroll" href="#">Contact</a>
                     </li>
                 </ul>
-                <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+                <p class="copyright text-muted small">Copyright &copy; Into the wild 2016. All Rights Reserved</p>
             </div>
         </div>
     </div>

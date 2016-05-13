@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by emiliedao on 5/12/16.
  */
-@WebServlet("/mammals/order")
+@WebServlet("/order")
 public class OrderServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -28,6 +28,7 @@ public class OrderServlet extends HttpServlet {
         if (order != null) {
             request.setAttribute("order", order);
             List<Family> families = order.getFamilies();
+
             request.setAttribute("families", families);
         }
 

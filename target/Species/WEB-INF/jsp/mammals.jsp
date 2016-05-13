@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,12 +87,13 @@
         </div>
 
         <c:forEach items="${ orders }" var="order">
+        <c:set var="orderName" value="${fn:replace(order.name, '_', ' ')}" />
         <div class="col-md-4 text-center">
             <div class="thumbnail">
-                <a href="<c:url value="/mammals/order"><c:param name="name" value="${ order.name }"/></c:url>">
+                <a href="<c:url value="/order"><c:param name="name" value="${ order.name }"/></c:url>">
                     <img class="img-responsive img-hover" src="${ order.image }" alt="">
                     <div class="caption">
-                        <h3>${ order.name }</a></h3>
+                        <h3>${ orderName }</a></h3>
                         <p>${ order.description }</p>
                     </div>
             </div>

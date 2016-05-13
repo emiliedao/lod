@@ -29,6 +29,7 @@ public class LoadData {
 
 //        FamilyLOD familyLOD = new FamilyLOD();
 //        familyLOD.load();
+//        familyLOD.update();
 
 //        ConservationStatusData conservationStatusData = new ConservationStatusData();
 //        conservationStatusData.load();

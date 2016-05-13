@@ -22,11 +22,22 @@
                 <li>
                     <a class="page-scroll" href="#">About</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#">Services</a>
-                </li>
+
                 <li>
                     <a class="page-scroll" href="#">Contact</a>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-align-justify"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/mammals">Species</a></li>
+                        <li><a href="#">Statistics</a></li>
+                        <li><a href="#">News</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li class="dropdown-header">Learn more about</li>
+                        <li><a href="#">Classification</a></li>
+                        <li><a href="#">Conservation status</a></li>
+                    </ul>
                 </li>
             </ul>
         </div>

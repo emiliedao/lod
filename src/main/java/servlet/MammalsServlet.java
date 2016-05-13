@@ -24,6 +24,7 @@ public class MammalsServlet extends HttpServlet {
 //        Mammals data
         BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
         BiologyClass mammal = biologyClassDao.findById(1);
+        mammal.setDescription(mammal.getDescription().replace("\n", "</p><p>"));
         request.setAttribute("mammal", mammal);
 
 //        List of orders
