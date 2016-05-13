@@ -192,4 +192,16 @@ public class Species {
 
     public void addCountry(Country country) { countries.add(country); }
 
+    @Override
+    public String toString() {
+        return "Species{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", scientificName='" + scientificName + '\'' +
+                ", description='" + description + '\'' +
+                ", comment='" + comment + '\'' +
+                ", count=" + count +
+                ", image='" + image + '\'' +
+                '}';
+    }
 }

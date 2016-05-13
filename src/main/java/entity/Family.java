@@ -88,4 +88,14 @@ public class Family {
     public void setSpecies(List<Species> species) {
         this.species = species;
     }
+
+    @Override
+    public String toString() {
+        return "Family{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                '}';
+    }
 }

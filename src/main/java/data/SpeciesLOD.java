@@ -10,6 +10,9 @@ import org.json.simple.JSONValue;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 5/9/16.
@@ -255,10 +258,20 @@ public class SpeciesLOD extends LOD {
     }
 
     public void update() {
-        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
-        ArrayList<Species> species = (ArrayList<Species>) speciesDao.findAll(Species.class);
+//        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+//        ArrayList<Species> species = (ArrayList<Species>) speciesDao.findAll(Species.class);
 
-        for (Species s : species) {
+        FamilyDao familyDao = DaoFactory.getFamilyDao();
+        Family family = familyDao.findById(19);
+        System.out.println(family.toString());
+        List<Species> species = family.getSpecies();
+        System.out.println("List : " + species.size());
+        Set<Species> speciesSet = new HashSet<Species>(family.getSpecies());
+        System.out.println("Set : " + speciesSet.size());
+
+        for (Species s : speciesSet) {
+            System.out.println(s.toString());
+
             if (s.getHabitats().isEmpty()) {
                 loadHabitats(s);
             }

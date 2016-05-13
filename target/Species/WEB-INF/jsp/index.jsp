@@ -147,7 +147,7 @@
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
 
-                    <p><a class="btn btn-primary" href="#">View</a></p>
+                    <p><a class="btn btn-primary" href="#">Learn more</a></p>
 
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
@@ -215,7 +215,7 @@
                             <span class="network-name">BBC Wildlife finder</span></a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-default btn-lg">
+                        <a href="http://www.iucnredlist.org" target="_blank" class="btn btn-default btn-lg">
                             <%--<i class="fa fa-list"></i>--%>
                             <span class="network-name">IUCN Red List</span></a>
                     </li>

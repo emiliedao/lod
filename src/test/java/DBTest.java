@@ -1,12 +1,14 @@
-import dao.BiologyClassDao;
-import dao.DaoFactory;
-import dao.OrderDao;
+import dao.*;
 import entity.BiologyClass;
+import entity.Family;
 import entity.Order;
+import entity.Species;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.spi.NaturalIdUniqueKeyBinder;
 import utils.HibernateUtils;
+
+import java.util.ArrayList;
 
 /**
  * Created by emiliedao on 5/2/16.
@@ -15,6 +17,8 @@ public class DBTest {
 
     private static BiologyClassDao biologyClassDao = DaoFactory.getBiologyClassDao();
     private static OrderDao orderDao = DaoFactory.getOrderDao();
+    private static FamilyDao familyDao = DaoFactory.getFamilyDao();
+    private static SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
 
     /**
      * Test the creation of an instance of BiologyClass and its storage into the database
@@ -87,6 +91,17 @@ public class DBTest {
         System.out.println(biologyClass.toString());
     }
 
+    private static void testFindSpeciesByNameAndFamily() {
+        Family family = familyDao.findById(17);
+        System.out.println(family.toString());
+
+        ArrayList<Species> species = (ArrayList<Species>) speciesDao.findByLetterAndFamily('E', family);
+
+        for (Species s : species) {
+            System.out.println(s.toString());
+        }
+    }
+
     public static void main(String args[]) {
 //        Tests
 //        testCreateClass();
@@ -95,6 +110,7 @@ public class DBTest {
 //        testUpdate();
 //        testDelete();
 //        testCreateOrder();
-        testFindOrders();
+//        testFindOrders();
+        testFindSpeciesByNameAndFamily();
     }
 }

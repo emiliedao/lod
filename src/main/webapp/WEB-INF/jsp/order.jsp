@@ -61,7 +61,7 @@
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/mammals">Mammals</a></li>
-                <li class="active">${ orderName }</li>
+                <li class="active">${ orderName } (${ fn:length(families) } families)</li>
             </ol>
         </div>
     </div>
@@ -81,7 +81,7 @@
     <c:set var="familyName" value="${fn:replace(family.name, '_', ' ')}" />
         <div class="row">
         <div class="col-md-5">
-            <a href="#">
+            <a href="<c:url value="/family"><c:param name="name" value="${ family.name }"/></c:url>">
                 <img class="img-responsive img-hover" src="${ family.image }" alt="">
             </a>
         </div>
@@ -94,6 +94,15 @@
     <hr>
     </c:forEach>
     <!-- /.row -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Into The Wild 2016</p>
+            </div>
+        </div>
+    </footer>
 
 </div>
 <!-- /.container -->

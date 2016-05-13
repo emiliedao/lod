@@ -215,7 +215,7 @@
                             <span class="network-name">BBC Wildlife finder</span></a>
                     </li>
                     <li>
-                        <a href="#" class="btn btn-default btn-lg">
+                        <a href="http://www.iucnredlist.org" target="_blank" class="btn btn-default btn-lg">
                             <%--<i class="fa fa-list"></i>--%>
                             <span class="network-name">IUCN Red List</span></a>
                     </li>

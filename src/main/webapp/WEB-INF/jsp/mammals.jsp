@@ -61,7 +61,7 @@
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a>
                 </li>
-                <li class="active">Mammals</li>
+                <li class="active">Mammals (${ fn:length(orders) } orders)</li>
             </ol>
         </div>
     </div>
