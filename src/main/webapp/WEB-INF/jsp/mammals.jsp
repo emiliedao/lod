@@ -61,7 +61,9 @@
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a>
                 </li>
-                <li class="active">Mammals (${ fn:length(orders) } orders)</li>
+                <c:set var="nbOrders" value="${ fn:length(orders) }"/>
+                <li class="active">Mammals
+                    (${ nbOrders } ${ (nbOrders == 0 || nbOrders == 1) ? 'order' : 'orders'})</li>
             </ol>
         </div>
     </div>

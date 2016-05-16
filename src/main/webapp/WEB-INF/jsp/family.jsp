@@ -77,6 +77,18 @@
     <div class="row">
         <div class="col-lg-12">
             <p>${ family.description }</p>
+
+            <c:if test="${ view != 'all' }">
+                <p>
+                    <a class="btn btn-primary"
+                       href="<c:url value="/family">
+                                <c:param name="name" value="${ family.name }"/>
+                                <c:param name="view" value="all"/>
+                            </c:url>">
+                        View all</a>
+                </p>
+            </c:if>
+
         </div>
     </div>
 
@@ -86,11 +98,24 @@
         <div class="col-lg-12">
             <ul class="pagination">
                 <c:forEach items="${ alphabet }" var="l">
-                    <li ${ (l.equals(letter)) ? 'class="active"' : '' }>
-                        <a href="<c:url value="/family">
-                            <c:param name="name" value="${ family.name }"/>
-                            <c:param name="letter" value="${ l }"/>
-                        </c:url>">${ l }</a>
+                    <c:choose>
+
+                        <%-- Disable link if there are no species beginning by this letter --%>
+                        <c:when test="${ l.value == 0 }">
+                            <li class="disabled">
+                        </c:when>
+
+                        <%-- Current letter active --%>
+                        <c:otherwise>
+                            <li ${ (l.key.equals(view)) ? 'class="active"' : '' }>
+                        </c:otherwise>
+                    </c:choose>
+
+                    <%-- Link to other letters --%>
+                    <a href="<c:url value="/family">
+                                    <c:param name="name" value="${ family.name }"/>
+                                    <c:param name="view" value="${ l.key }"/>
+                                </c:url>">${ l.key }</a>
                     </li>
                 </c:forEach>
 
@@ -99,24 +124,37 @@
     </div>
     <!-- /.row -->
 
-
     <!-- Species -->
     <div class="row">
+    <c:choose>
+        <c:when test="${ view == 'all' }">
+            <div class="list-group">
+                <c:forEach items="${ species }" var="s">
+                    <a class="list-group-item"
+                       href="<c:url value="/species"><c:param name="name" value="${ s.name }"/></c:url>">
+                       ${ s.name }</a>
+                </c:forEach>
+            </div>
+        </c:when>
 
-        <c:forEach items="${ species }" var="s">
-            <div class="col-md-2 text-center">
-                <div class="thumbnail">
-                    <a href="<c:url value="/species"><c:param name="id" value="${ s.id }"/></c:url>">
-                        <img class="img-responsive img-hover" src="${ s.image }" alt="">
-                    </a>
-                    <div class="caption">
-                        <h4>
-                            <a href="<c:url value="/species"><c:param name="id" value="${ s.id }"/></c:url>">${ s.name }</a>
-                        </h4>
+        <c:otherwise>
+
+            <c:forEach items="${ species }" var="s">
+                <div class="col-md-2 text-center">
+                    <div class="thumbnail">
+                        <a href="<c:url value="/species"><c:param name="name" value="${ s.name }"/></c:url>">
+                            <img class="img-responsive img-hover" src="${ s.image }" alt="">
+                        </a>
+                        <div class="caption">
+                            <h4>
+                                <a href="<c:url value="/species"><c:param name="name" value="${ s.name }"/></c:url>">${ s.name }</a>
+                            </h4>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
     </div>
     <!-- /.row -->
 

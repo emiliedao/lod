@@ -1,5 +1,9 @@
 package servlet;
 
+import dao.DaoFactory;
+import dao.SpeciesDao;
+import entity.Species;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +17,12 @@ import java.io.IOException;
 @WebServlet("/species")
 public class SpeciesServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String speciesName = request.getParameter("name");
+        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+        Species species = speciesDao.findByName(speciesName);
+        request.setAttribute("species", species);
+
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/species.jsp").forward(request, response);
     }
