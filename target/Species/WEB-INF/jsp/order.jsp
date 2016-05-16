@@ -63,7 +63,7 @@
                 <li><a href="/mammals">Mammals</a></li>
                 <c:set var="nbFamilies" value="${ fn:length(families) }"/>
                 <li class="active">${ orderName }
-                    (${ nbFamilies } ${ (nbFamilies == 0 || nbFamilies == 1) ? 'family' : 'families'} )</li>
+                    (${ nbFamilies } ${ (nbFamilies == 0 || nbFamilies == 1) ? 'family' : 'families'})</li>
             </ol>
         </div>
     </div>

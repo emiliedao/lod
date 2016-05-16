@@ -59,8 +59,8 @@
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">${ familyName }
-                <small>Family</small>
+            <h1 class="page-header">${ species.name }
+                <small>Species</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="/home">Home</a></li>
@@ -79,14 +79,40 @@
     <!-- Intro Content -->
     <div class="row">
         <div class="col-lg-12">
-
-            <div class="col-lg-6">
+            <div class="col-md-8">
                 <p>${ species.description }</p>
+
+                <c:set var="status" value="${ species.conservationStatus.id }" />
+                <p align="center"><button type="button" class="btn btn-circle btn-xxl
+                    <c:choose>
+                        <c:when test="${ status == 'EX' || status == 'EW'}">btn-primary</c:when>
+                        <c:when test="${  status == 'CR' || status == 'EN' }">btn-danger</c:when>
+                        <c:when test="${  status == 'VU' || status == 'NT' }">btn-warning</c:when>
+                        <c:when test="${  status == 'LC' }">btn-success</c:when>
+                        <c:otherwise>btn-default</c:otherwise>
+                    </c:choose>
+                ">
+                    ${ species.conservationStatus.label }
+                </button></p>
             </div>
 
-            <div class="col-lg-6">
-                <img class="img-responsive img-thumbnail" src="${ species.image }" alt="">
+            <div class="col-md-4">
+                <img align=right class="img-responsive img-thumbnail" src="${ species.image }" alt="">
             </div>
+
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h3>Threats</h3>
+        </div>
+
+        <div class="col-lg-6">
+            <h3>Measures</h3>
         </div>
     </div>
     <!-- /.row -->

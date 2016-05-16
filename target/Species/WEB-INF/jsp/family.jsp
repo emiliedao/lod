@@ -79,7 +79,8 @@
             <p>${ family.description }</p>
 
             <c:if test="${ view != 'all' }">
-                <p>
+                <br>
+                <p align="center">
                     <a class="btn btn-primary"
                        href="<c:url value="/family">
                                 <c:param name="name" value="${ family.name }"/>
@@ -91,6 +92,10 @@
 
         </div>
     </div>
+    <!-- /.row -->
+
+    <h2>Species</h2>
+    <hr>
 
 
     <!-- Pagination -->

@@ -63,7 +63,7 @@
                 </li>
                 <c:set var="nbOrders" value="${ fn:length(orders) }"/>
                 <li class="active">Mammals
-                    (${ nbOrders } ${ (nbOrders == 0 || nbOrders == 1) ? 'order' : 'orders'} )</li>
+                    (${ nbOrders } ${ (nbOrders == 0 || nbOrders == 1) ? 'order' : 'orders'})</li>
             </ol>
         </div>
     </div>

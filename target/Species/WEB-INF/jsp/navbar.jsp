@@ -36,7 +36,7 @@
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Learn more about</li>
                         <li><a href="#">Classification</a></li>
-                        <li><a href="#">Conservation status</a></li>
+                        <li><a href="/conservationStatus">Conservation status</a></li>
                     </ul>
                 </li>
             </ul>
