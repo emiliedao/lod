@@ -17,13 +17,23 @@
     </servlet>
 
     <servlet>
-        <servlet-name>FelidaeServlet</servlet-name>
-        <servlet-class>servlet.FelidaeServlet</servlet-class>
+        <servlet-name>OrderServlet</servlet-name>
+        <servlet-class>servlet.OrderServlet</servlet-class>
     </servlet>
 
     <servlet>
-        <servlet-name>OrderServlet</servlet-name>
-        <servlet-class>servlet.OrderServlet</servlet-class>
+        <servlet-name>FamilyServlet</servlet-name>
+        <servlet-class>servlet.FamilyServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>SpeciesServlet</servlet-name>
+        <servlet-class>servlet.SpeciesServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>NewsServlet</servlet-name>
+        <servlet-class>servlet.NewsServlet</servlet-class>
     </servlet>
 
     <jsp-config>

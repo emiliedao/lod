@@ -1,8 +1,6 @@
 package data;
 
-import dao.DaoFactory;
-import dao.SpeciesDao;
-import entity.Species;
+import data.lod.SpeciesLOD;
 
 import java.util.ArrayList;
 
@@ -37,5 +35,7 @@ public class LoadData {
         SpeciesLOD speciesLOD = new SpeciesLOD();
 //        speciesLOD.load();
         speciesLOD.update();
+
+        System.exit(0);
     }
 }

@@ -66,13 +66,13 @@
                             </li>
                             <li>
                                 <a href="#wildlife" class="btn btn-default btn-lg page-scroll">
-                                    <i class="fa fa-leaf fa-fw"></i>
+                                    <i class="fa fa-globe fa-fw"></i>
                                     <span class="network-name">Endangered wildlife</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#news" class="btn btn-default btn-lg page-scroll">
-                                    <i class="fa fa-globe fa-fw"></i>
+                                    <i class="fa fa-newspaper-o fa-fw"></i>
                                     <span class="network-name">News</span>
                                 </a>
                             </li>
@@ -114,7 +114,10 @@
 
                     <%--<p class="lead"><a href="/mammals">Mammals</a> </p>--%>
 
-                    <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
+                    <p>All of you have heard about mammals. However, do you know everything about them? How are they classified? Where do they live? And, most of all, are there still going to live on Earth for a long time to come?</p>
+
+                    <p>With this application, you can have a quick overview of each mammal and know about their current conservation status in the world.</p>
+
 
                     <p><a class="btn btn-primary" href="/mammals">Discover mammals</a></p>
 
@@ -145,7 +148,8 @@
                     <h2 class="section-heading">Endangered wildlife</h2>
                     <%--<p class="lead"><a href="/felidae">Text</a></p>--%>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
+
+                    <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
 
                     <p><a class="btn btn-primary" href="#">Learn more</a></p>
 
@@ -177,7 +181,7 @@
                     <h2 class="section-heading">News</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
 
-                    <p><a class="btn btn-primary" href="#">Consult news</a></p>
+                    <p><a class="btn btn-primary" href="/news">Consult news</a></p>
 
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -199,24 +203,24 @@
     <div class="container">
 
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-lg-5">
                 <h2>Sources</h2>
             </div>
             <div class="col-lg-6">
                 <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="http://wiki.dbpedia.org" target="_blank" class="btn btn-default btn-lg">
-                            <%--<i class="fa fa-wikipedia-w"></i>--%>
+                            <i class="fa fa-database"></i>
                             <span class="network-name">DBpedia</span></a>
                     </li>
                     <li>
                         <a href="http://www.bbc.co.uk/nature/wildlife" target="_blank" class="btn btn-default btn-lg">
-                            <%--<i class="fa fa-television"></i>--%>
+                            <i class="fa fa-leaf"></i>
                             <span class="network-name">BBC Wildlife finder</span></a>
                     </li>
                     <li>
                         <a href="http://www.iucnredlist.org" target="_blank" class="btn btn-default btn-lg">
-                            <%--<i class="fa fa-list"></i>--%>
+                            <i class="fa fa-list-alt"></i>
                             <span class="network-name">IUCN Red List</span></a>
                     </li>
                 </ul>

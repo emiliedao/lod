@@ -47,6 +47,13 @@
 
 <body>
 
+<!-- Navigation -->
+<c:import url="navbar.jsp"></c:import>
+
+
+<!-- Page Content -->
+<div class="container">
+
     <!-- Page Heading/Breadcrumbs -->
     <div class="row">
         <div class="col-lg-12">
@@ -61,17 +68,13 @@
     </div>
     <!-- /.row -->
 
-    <!-- Navigation -->
-    <c:import url="navbar.jsp"></c:import>
 
-    <!-- Page Content -->
-    <div class="container">
-
-        <div>
-            <ul class="timeline">
-                <c:forEach items="${ conservationStatus }" var="status" varStatus="it" >
-                    <li class="${ it.index % 2 eq 0 ? 'timeline' : 'timeline-inverted' }">
-                        <div class="timeline-badge
+    <div>
+        <ul class="timeline">
+            <c:forEach items="${ conservationStatus }" var="status" varStatus="it">
+                <li class="${ it.index % 2 eq 0 ? 'timeline' : 'timeline-inverted' }"
+                    id="${ status.id }">
+                    <div class="timeline-badge
                             <c:choose>
                                 <c:when test="${ status.id == 'EX' || status.id == 'EW'}">primary</c:when>
                                 <c:when test="${  status.id == 'CR' || status.id == 'EN' || status.id == 'VU'  }">danger</c:when>
@@ -80,40 +83,40 @@
                             </c:choose>
                         ">${ status.id }</div>
 
-                        <div class="timeline-panel">
+                    <div class="timeline-panel">
 
-                            <div class="timeline-heading">
-                                <h4 class="timeline-title">${ status.label }</h4>
-                            </div>
-                            <div class="timeline-body">
-                                <p>${ status.description }</p>
-                            </div>
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">${ status.label }</h4>
                         </div>
-                    </li>
-                </c:forEach>
+                        <div class="timeline-body">
+                            <p>${ status.description }</p>
+                        </div>
+                    </div>
+                </li>
+            </c:forEach>
 
-            </ul>
-        </div>
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Into The Wild 2016</p>
-                </div>
-            </div>
-        </footer>
-
+        </ul>
     </div>
-        <!-- /.container -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Into The Wild 2016</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->
 
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
 </body>

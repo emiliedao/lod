@@ -73,7 +73,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="col-lg-6">
-                <img class="img-responsive img-thumbnail" src="${ mammal.image }" alt=""
+                <img class="img-responsive img-thumbnail img-hover" src="${ mammal.image }" alt=""
                      style="margin-right: 17px; margin-bottom: 10px; ">
             </div>
             <h2>About mammals</h2>

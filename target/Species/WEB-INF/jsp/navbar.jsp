@@ -32,7 +32,7 @@
                     <ul class="dropdown-menu">
                         <li><a href="/mammals">Species</a></li>
                         <li><a href="#">Statistics</a></li>
-                        <li><a href="#">News</a></li>
+                        <li><a href="/news">News</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Learn more about</li>
                         <li><a href="#">Classification</a></li>

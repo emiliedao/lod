@@ -81,19 +81,6 @@
         <div class="col-lg-12">
             <div class="col-md-8">
                 <p>${ species.description }</p>
-
-                <c:set var="status" value="${ species.conservationStatus.id }" />
-                <p align="center"><button type="button" class="btn btn-circle btn-xxl
-                    <c:choose>
-                        <c:when test="${ status == 'EX' || status == 'EW'}">btn-primary</c:when>
-                        <c:when test="${  status == 'CR' || status == 'EN' }">btn-danger</c:when>
-                        <c:when test="${  status == 'VU' || status == 'NT' }">btn-warning</c:when>
-                        <c:when test="${  status == 'LC' }">btn-success</c:when>
-                        <c:otherwise>btn-default</c:otherwise>
-                    </c:choose>
-                ">
-                    ${ species.conservationStatus.label }
-                </button></p>
             </div>
 
             <div class="col-md-4">
@@ -104,19 +91,76 @@
     </div>
     <!-- /.row -->
 
+    <h2>Habitats</h2>
     <hr>
 
     <div class="row">
         <div class="col-lg-6">
-            <h3>Threats</h3>
-        </div>
-
-        <div class="col-lg-6">
-            <h3>Measures</h3>
+            <ul class="list-group">
+                <c:forEach items="${ habitats }" var="habitat">
+                    <li class="list-group-item">${ habitat.label }</li>
+                </c:forEach>
+            </ul>
         </div>
     </div>
-    <!-- /.row -->
 
+    <h2>Conservation</h2>
+    <hr>
+
+    <div class="col-lg-4">
+        <h3>Threats</h3>
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Habitats</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${ threats }" var="threat">
+                <tr><td>${ threat.title }</td></tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h3 align="center">Status</h3>
+            <c:set var="status" value="${ species.conservationStatus.id }" />
+            <p align="center"><a href="/conservationStatus" class="btn btn-circle btn-xxl
+                        <c:choose>
+                            <c:when test="${ status == 'EX' || status == 'EW'}">btn-primary</c:when>
+                            <c:when test="${  status == 'CR' || status == 'EN' || status == 'VU'  }">btn-danger</c:when>
+                            <c:when test="${  status == 'NT' }">btn-warning</c:when>
+                            <c:when test="${  status == 'LC' }">btn-success</c:when>
+                            <c:otherwise>btn-default</c:otherwise>
+                        </c:choose>
+                    ">${ species.conservationStatus.label }
+            </a></p>
+        </div>
+
+
+        <div class="col-lg-4">
+            <h3 align="center">Measures</h3>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>Habitats</th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${ measures }" var="measure">
+                    <tr><td>${ measure.title }</td></tr>
+                </c:forEach>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+    <!-- /.row -->
 
     <hr>
 
