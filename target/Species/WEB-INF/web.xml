@@ -36,6 +36,11 @@
         <servlet-class>servlet.NewsServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>ClassificationServlet</servlet-name>
+        <servlet-class>servlet.ClassificationServlet</servlet-class>
+    </servlet>
+
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

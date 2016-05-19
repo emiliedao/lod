@@ -84,7 +84,7 @@
             </div>
 
             <div class="col-md-4">
-                <img align=right class="img-responsive img-thumbnail" src="${ species.image }" alt="">
+                <img align=right class="img-responsive img-thumbnail img-hover" src="${ species.image }" alt="">
             </div>
 
         </div>

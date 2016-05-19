@@ -206,7 +206,7 @@
             <div class="col-lg-5">
                 <h2>Sources</h2>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <ul class="list-inline banner-social-buttons">
                     <li>
                         <a href="http://wiki.dbpedia.org" target="_blank" class="btn btn-default btn-lg">
