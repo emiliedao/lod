@@ -69,4 +69,6 @@ public abstract class News {
     public void setWebUrl(String webUrl) {
         this.webUrl = webUrl;
     }
+
+    public abstract void formatDate();
 }

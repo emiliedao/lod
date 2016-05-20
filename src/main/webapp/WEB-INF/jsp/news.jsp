@@ -67,7 +67,7 @@
     <!-- Service Tabs -->
     <div class="row">
 
-        <div class="col-lg-12">
+        <div class="col-md-8">
 
             <ul class="nav nav-tabs nav-justified">
                 <li ${ (source.equals("guardian")) ? 'class="active"' : '' }>
@@ -80,11 +80,6 @@
                     <a href="/news?source=alchemy"><i class="fa fa-flask"></i> AlchemyData</a>
                 </li>
             </ul>
-
-    <div class="row">
-
-        <!-- Blog Entries Column -->
-        <div class="col-md-12">
 
             <c:forEach items="${ listNews }" var="news">
                 <!-- First Blog Post -->
@@ -105,6 +100,86 @@
 
                 <hr>
             </c:forEach>
+
+        </div>
+
+        <!-- Blog Sidebar Widgets Column -->
+        <div class="col-md-4">
+
+            <!-- Blog Search Well -->
+            <div class="well">
+                <h4>Search news</h4>
+                <form method="post" action="/news">
+                    <div class="input-group">
+                            <input type="text" class="form-control" name="search"
+                                   placeholder="${ search }">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                </span>
+                    </div>
+
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="source" value="guardian"
+                            ${ (source.equals("guardian")) ? 'checked' : '' }>The Guardian
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="source" value="ny"
+                            ${ (source.equals("ny")) ? 'checked' : '' }>The New York Times
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="source" value="alchemy"
+                            ${ (source.equals("alchemy")) ? 'checked' : '' }>AlchemyData
+                        </label>
+                    </div>
+
+                    <!-- /.input-group -->
+                </form>
+            </div>
+
+            <!-- Blog Categories Well -->
+            <div class="well">
+                <h4>News categories</h4>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Endangered species</a>
+                            </li>
+                            <li><a href="#">Wildlife</a>
+                            </li>
+                            <li><a href="#">Animals</a>
+                            </li>
+                            <li><a href="#">Mammals</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.col-lg-6 -->
+                    <div class="col-lg-6">
+                        <ul class="list-unstyled">
+                            <li><a href="#">Environment</a>
+                            </li>
+                            <li><a href="#">Global warming</a>
+                            </li>
+                            <li><a href="#">Planet</a>
+                            </li>
+                            <li><a href="#">Climate change</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.col-lg-6 -->
+                </div>
+                <!-- /.row -->
+            </div>
+
+            <!-- Side Widget Well -->
+            <div class="well">
+                <h4>Side Widget Well</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+            </div>
 
         </div>
 

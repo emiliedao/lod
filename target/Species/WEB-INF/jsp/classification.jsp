@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +69,7 @@
 
     <div class="row">
         <p align="center">
-            <img class="img-responsive img-thumbnail img-hover" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Taxonomic_Rank_Graph.svg/300px-Taxonomic_Rank_Graph.svg.png" alt="">
+            <img class="img-responsive img-thumbnail" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Taxonomic_Rank_Graph.svg/500px-Taxonomic_Rank_Graph.svg.png" alt="">
         </p>
     </div>
 
@@ -81,11 +80,11 @@
 
         <p>Consider a particular species, the red fox Vulpes vulpes: its next rank, the genus Vulpes, comprises all the 'true foxes'. Their closest relatives are in the immediately higher rank, the family Canidae, which includes dogs, wolves, jackals, all foxes, and other caniforms; the next higher rank, the order Carnivora, includes feliforms and caniforms (lions, tigers, bears, hyenas, wolverines, and all those mentioned above), plus other carnivorous mammals. As one group of the class Mammalia, all of the above are classified among those with backbones in the Chordata phylum rank, and with them among all the animals in the Animalia kingdom rank. Finally, all of the above will find their earliest relatives somewhere in their domain rank Eukarya.</p>
 
-        <p>The International Code of Zoological Nomenclature defines rank as:</p>
+        <p>The <i>International Code of Zoological Nomenclature</i> defines rank as:</p>
 
         <div class="well">
             The level, for nomenclatural purposes, of a taxon in a taxonomic hierarchy (e.g. all families are for
-            nomenclatural purposes at the same rank, which lies between superfamily and subfamily)
+            nomenclatural purposes at the same rank, which lies between superfamily and subfamily).
         </div>
     </div>
     <!-- /.row -->

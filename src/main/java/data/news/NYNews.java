@@ -16,4 +16,9 @@ public class NYNews extends News {
         title = (String) headline.get("main");
 
     }
+
+    @Override
+    public void formatDate() {
+        publicationDate = publicationDate.substring(0, 10);
+    }
 }

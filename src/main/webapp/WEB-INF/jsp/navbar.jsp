@@ -20,11 +20,11 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#">About</a>
+                    <a class="page-scroll" href="/about">About</a>
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="#">Contact</a>
+                    <a class="page-scroll" href="/contact">Contact</a>
                 </li>
 
                 <li class="dropdown">

@@ -25,4 +25,9 @@ public class GuardianNews extends News {
 
         bodyHtml = (String) body.get("bodyHtml");
     }
+
+    @Override
+    public void formatDate() {
+        publicationDate = publicationDate.substring(0, 10);
+    }
 }
