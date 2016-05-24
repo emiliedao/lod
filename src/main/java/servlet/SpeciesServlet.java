@@ -1,11 +1,14 @@
 package servlet;
 
+import dao.CountryDao;
 import dao.DaoFactory;
 import dao.SpeciesDao;
-import entity.Habitat;
-import entity.Measure;
-import entity.Species;
-import entity.Threat;
+import entity.*;
+import org.apache.commons.io.IOUtils;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.ParseException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -37,7 +41,42 @@ public class SpeciesServlet extends HttpServlet {
         Set<Measure> measures = new HashSet<Measure>(species.getMeasures());
         request.setAttribute("measures", measures);
 
-        this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/species.jsp").forward(request, response);
+//        Get countries occurrences
+        String countriesOccurrences = "[";
+        String url = null;
+        String formattedName = species.getScientificName().replace(" ", "%20");
+        url = "http://apiv3.iucnredlist.org/api/v3/species/countries/name/" + formattedName + "?token=72a46a72cd71144d445d6ce0d8ccb67709db20ca995dbe9635155d7ec6284207";
+
+        try {
+            String jsonString = IOUtils.toString(new URL(url));
+
+            JSONObject jsonObject = (JSONObject) JSONValue.parseWithException(jsonString);
+            JSONArray result = (JSONArray) jsonObject.get("result");
+
+
+//            Get countries codes
+            for (int i = 0; i < result.size(); i++) {
+                JSONObject o = (JSONObject) result.get(i);
+                String code = (String) o.get("code");
+
+                countriesOccurrences += "{ code: '" + code + "', value: 1 }";
+
+                if (code != null) {
+                    if (i != result.size() - 1) {
+                        countriesOccurrences += ", ";
+                    }
+                }
+
+            }
+
+            countriesOccurrences += "]";
+
+            request.setAttribute("countriesOccurrences", countriesOccurrences);
+
+            this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/species.jsp").forward(request, response);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -84,15 +84,10 @@
             <c:forEach items="${ listNews }" var="news">
                 <!-- First Blog Post -->
                 <h3>${ news.title }</h3>
-                <%--<p class="lead">--%>
-                    <%--by <c:out value="${ not empty news.author ? news.author : 'Unknown' }"/>--%>
-                <%--</p>--%>
+
                 <p><i class="fa fa-clock-o"></i> Posted on ${ news.publicationDate }</p>
                 <hr>
-                <%--<a href="blog-post.html">--%>
-                    <%--<img class="img-responsive img-hover" src="http://placehold.it/900x300" alt="">--%>
-                <%--</a>--%>
-                <%--<hr>--%>
+
                 <p>${ news.summary }</p>
                 <a class="btn btn-primary"
                    target="_blank"
@@ -147,28 +142,48 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
+                            <li><a href="<c:url value="/news">
+                                    <c:param name="category" value="endangered_species"/>
+                                </c:url>">Endangered species</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li><a href="<c:url value="/news">
+                                    <c:param name="category" value="wildlife"/>
+                                </c:url>">Wildlife</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li><a href="<c:url value="/news">
+                                    <c:param name="category" value="animals"/>
+                                </c:url>">Animals</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li><a href="<c:url value="/news">
+                                    <c:param name="category" value="mammals"/>
+                                </c:url>">Mammals</a>
                             </li>
                         </ul>
                     </div>
                     <!-- /.col-lg-6 -->
                     <div class="col-lg-6">
                         <ul class="list-unstyled">
-                            <li><a href="#">Category Name</a>
+                            <li>
+                                <a href="<c:url value="/news">
+                                    <c:param name="category" value="environment"/>
+                                </c:url>">Environment</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li><a href="<c:url value="/news">
+                                    <c:param name="category" value="global_warming"/>
+                                </c:url>">Global warming</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li>
+                                <a href="<c:url value="/news">
+                                <c:param name="category" value="planet"/>
+                            </c:url>">Planet</a>
                             </li>
-                            <li><a href="#">Category Name</a>
+                            <li>
+                                <a href="<c:url value="/news">
+                                <c:param name="category" value="climate_change"/>
+                            </c:url>">Climate change</a>
                             </li>
                         </ul>
+
                     </div>
                     <!-- /.col-lg-6 -->
                 </div>
@@ -178,7 +193,7 @@
             <!-- Side Widget Well -->
             <div class="well">
                 <h4>Side Widget Well</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, perspiciatis adipisci accusamus laudantium odit aliquam repellat tempore quos aspernatur vero.</p>
+                <p>You can choose the source and find some news published in this month corresponding to your own keywords, or search other news from all sources using the predefine categories.</p>
             </div>
 
         </div>

@@ -69,7 +69,7 @@
                     <a href="<c:url value="/order"><c:param name="name" value="${ species.family.order.name }"/></c:url>">${ orderName }</a>
                 </li>
                 <li>
-                    <a href="<c:url value="/family"><c:param name="name" value="${ species.family.order.name }"/></c:url>">${ familyName }</a></li>
+                    <a href="<c:url value="/family"><c:param name="name" value="${ species.family.name }"/></c:url>">${ familyName }</a></li>
                 <li class="active">${ species.name } </li>
             </ol>
         </div>
@@ -91,18 +91,30 @@
     </div>
     <!-- /.row -->
 
-    <h2>Habitats</h2>
+    <h2>Location</h2>
     <hr>
 
+    <script type="text/javascript">
+        var countriesOccurrences = ${ countriesOccurrences };
+    </script>
+
     <div class="row">
-        <div class="col-lg-6">
-            <ul class="list-group">
-                <c:forEach items="${ habitats }" var="habitat">
-                    <li class="list-group-item">${ habitat.label }</li>
-                </c:forEach>
-            </ul>
-        </div>
+        <div id="map" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div>
     </div>
+    <!-- /.row -->
+
+
+    <h2>Habitats</h2>
+    <hr>
+    <div class="row">
+        <ul class="list-group">
+            <c:forEach items="${ habitats }" var="habitat">
+                <li class="list-group-item col-md-6">${ habitat.label }</li>
+            </c:forEach>
+        </ul>
+    </div>
+    <!-- /.row -->
+
 
     <h2>Conservation</h2>
     <hr>
@@ -111,11 +123,6 @@
         <h3>Threats</h3>
 
         <table class="table table-hover">
-            <thead>
-            <tr>
-                <th>Habitats</th>
-            </tr>
-            </thead>
             <tbody>
             <c:forEach items="${ threats }" var="threat">
                 <tr><td>${ threat.title }</td></tr>
@@ -145,11 +152,6 @@
             <h3 align="center">Measures</h3>
 
             <table class="table table-hover">
-                <thead>
-                <tr>
-                    <th>Habitats</th>
-                </tr>
-                </thead>
                 <tbody>
                 <c:forEach items="${ measures }" var="measure">
                     <tr><td>${ measure.title }</td></tr>
@@ -161,6 +163,7 @@
 
     </div>
     <!-- /.row -->
+
 
     <hr>
 
@@ -182,6 +185,13 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script src="js/bootstrap.min.js"></script>
+
+<!-- Highcharts -->
+<script src="https://code.highcharts.com"></script>
+<script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+<script src="js/map.js"></script>
+
 
 </body>
 
