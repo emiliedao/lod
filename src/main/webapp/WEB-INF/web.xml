@@ -51,6 +51,11 @@
         <servlet-class>servlet.ContactServlet</servlet-class>
     </servlet>
 
+    <servlet>
+        <servlet-name>StatisticsServlet</servlet-name>
+        <servlet-class>servlet.StatisticsServlet</servlet-class>
+    </servlet>
+
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

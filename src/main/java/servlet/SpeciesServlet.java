@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Set;
@@ -42,6 +43,17 @@ public class SpeciesServlet extends HttpServlet {
         request.setAttribute("measures", measures);
 
 //        Get countries occurrences
+        String countriesOccurrences = getCountriesOccurrences(species);
+        request.setAttribute("countriesOccurrences", countriesOccurrences);
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/species.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    private String getCountriesOccurrences(Species species) {
         String countriesOccurrences = "[";
         String url = null;
         String formattedName = species.getScientificName().replace(" ", "%20");
@@ -70,16 +82,10 @@ public class SpeciesServlet extends HttpServlet {
             }
 
             countriesOccurrences += "]";
-
-            request.setAttribute("countriesOccurrences", countriesOccurrences);
-
-            this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/species.jsp").forward(request, response);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        return countriesOccurrences;
     }
 }

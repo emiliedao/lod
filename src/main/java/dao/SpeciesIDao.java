@@ -1,5 +1,6 @@
 package dao;
 
+import entity.ConservationStatus;
 import entity.Family;
 import entity.Species;
 
@@ -13,4 +14,7 @@ public interface SpeciesIDao extends GenericIDao<Species> {
     List<Species> findByFamily(Family family);
     List<Species> findByLetterAndFamily(Character lettre, Family family);
     int countByLetterAndFamily(Character letter, Family family);
+    List<Species> findByConservationStatus(ConservationStatus status);
+    int countByConservationStatus(ConservationStatus status);
+    int countAll();
 }

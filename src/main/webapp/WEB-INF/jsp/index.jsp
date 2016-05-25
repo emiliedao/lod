@@ -151,7 +151,7 @@
 
                     <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
 
-                    <p><a class="btn btn-primary" href="#">Learn more</a></p>
+                    <p><a class="btn btn-primary" href="/statistics">Learn more</a></p>
 
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">

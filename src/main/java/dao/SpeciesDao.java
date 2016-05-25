@@ -1,5 +1,6 @@
 package dao;
 
+import entity.ConservationStatus;
 import entity.Family;
 import entity.Species;
 import org.hibernate.Query;
@@ -58,6 +59,38 @@ public class SpeciesDao extends GenericDaoHibernate<Species> implements SpeciesI
         Query q = s.createQuery("select count (*) from Species where name like:name and family=:family");
         q.setString("name", letter + "%");
         q.setParameter("family", family);
+        int count = Integer.parseInt(q.uniqueResult().toString());
+        t.commit();
+        s.close();
+        return count;
+    }
+
+    public List<Species> findByConservationStatus(ConservationStatus status) {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        Query q = s.createQuery("from Species where conservationStatus=:status");
+        q.setParameter("status", status);
+        List<Species> species = q.list();
+        t.commit();
+        s.close();
+        return species;
+    }
+
+    public int countByConservationStatus(ConservationStatus status) {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        Query q = s.createQuery("select count (*) from Species where conservationStatus=:status");
+        q.setParameter("status", status);
+        int count = Integer.parseInt(q.uniqueResult().toString());
+        t.commit();
+        s.close();
+        return count;
+    }
+
+    public int countAll() {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        Query q = s.createQuery("select count (*) from Species");
         int count = Integer.parseInt(q.uniqueResult().toString());
         t.commit();
         s.close();

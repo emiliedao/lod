@@ -164,6 +164,12 @@
     </div>
     <!-- /.row -->
 
+    <%--<h2>Historical assessment</h2>--%>
+    <%--<hr>--%>
+
+    <%--<div class="row">--%>
+        <%--<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>--%>
+    <%--</div>--%>
 
     <hr>
 
@@ -191,6 +197,7 @@
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 <script src="js/map.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
 
 </body>

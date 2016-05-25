@@ -10,7 +10,7 @@ $(function () {
         },
 
         title : {
-            text : ''
+            text : 'Location in the world'
         },
         // subtitle : {
         //     text : ''

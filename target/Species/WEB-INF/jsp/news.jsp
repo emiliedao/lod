@@ -107,7 +107,7 @@
                 <form method="post" action="/news">
                     <div class="input-group">
                             <input type="text" class="form-control" name="search"
-                                   placeholder="${ search }">
+                                   value="${ search }">
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
                                 </span>
@@ -192,7 +192,7 @@
 
             <!-- Side Widget Well -->
             <div class="well">
-                <h4>Side Widget Well</h4>
+                <h4>How to use?</h4>
                 <p>You can choose the source and find some news published in this month corresponding to your own keywords, or search other news from all sources using the predefine categories.</p>
             </div>
 

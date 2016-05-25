@@ -31,7 +31,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-align-justify"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/mammals">Species</a></li>
-                        <li><a href="#">Statistics</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
                         <li><a href="/news">News</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Learn more about</li>
