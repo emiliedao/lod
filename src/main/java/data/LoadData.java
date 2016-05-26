@@ -32,9 +32,12 @@ public class LoadData {
 //        ConservationStatusData conservationStatusData = new ConservationStatusData();
 //        conservationStatusData.load();
 
-        SpeciesLOD speciesLOD = new SpeciesLOD();
+//        SpeciesLOD speciesLOD = new SpeciesLOD();
 //        speciesLOD.load();
-        speciesLOD.update();
+//        speciesLOD.update();
+
+        StatisticsData statisticsData = new StatisticsData();
+        statisticsData.load();
 
         System.exit(0);
     }

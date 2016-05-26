@@ -65,7 +65,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#wildlife" class="btn btn-default btn-lg page-scroll">
+                                <a href="#endangered-wildlife" class="btn btn-default btn-lg page-scroll">
                                     <i class="fa fa-globe fa-fw"></i>
                                     <span class="network-name">Endangered wildlife</span>
                                 </a>
@@ -101,19 +101,6 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Species</h2>
 
-                    <%--<p><c:out value="Text displayed with JSTL"/></p>--%>
-
-                    <%--<c:set var="message" value="This is a message from  a variable" scope="request"/>--%>
-                    <%--<p><c:out value="${ requestScope.message }"/></p>--%>
-
-                    <%--<p>--%>
-                        <%--<a href="<c:url value="/home">--%>
-                        <%--<c:param name="name" value="Benjamin"></c:param>--%>
-                    <%--</c:url>">Change your name</a>--%>
-                    <%--</p>--%>
-
-                    <%--<p class="lead"><a href="/mammals">Mammals</a> </p>--%>
-
                     <p>All of you have heard about mammals. However, do you know everything about them? How are they classified? Where do they live? And, most of all, are there still going to live on Earth for a long time to come?</p>
 
                     <p>With this application, you can have a quick overview of each mammal and know about their current conservation status in the world.</p>
@@ -136,7 +123,7 @@
 <!-- /.about-section -->
 
 
-<section id="wildlife" class="services-section">
+<section id="endangered-wildlife" class="services-section">
     <div class="content-section-b">
 
         <div class="container">
@@ -146,12 +133,10 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Endangered wildlife</h2>
-                    <%--<p class="lead"><a href="/felidae">Text</a></p>--%>
-
 
                     <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
 
-                    <p><a class="btn btn-primary" href="/statistics">Learn more</a></p>
+                    <p><a class="btn btn-primary" href="/endangeredWildlife">Consult statistics</a></p>
 
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
@@ -181,7 +166,7 @@
                     <h2 class="section-heading">News</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
 
-                    <p><a class="btn btn-primary" href="/news">Consult news</a></p>
+                    <p><a class="btn btn-primary" href="/news">Search news</a></p>
 
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -248,11 +233,18 @@
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#wildlife">Endangered wildlife</a>
+                        <a class="page-scroll" href="#endangered-wildlife">Endangered wildlife</a>
                     </li>
                     <li class="footer-menu-divider">&sdot;</li>
                     <li>
-                        <a class="page-scroll" href="#">Contact</a>
+                        <a class="page-scroll" href="#news">News</a>
+                    </li>
+                    <li class="footer-menu-divider">&sdot;</li>
+                    <li>
+                        <a class="page-scroll" href="/about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="/contact">Contact</a>
                     </li>
                 </ul>
                 <p class="copyright text-muted small">Copyright &copy; Into the wild 2016. All Rights Reserved</p>

@@ -15,6 +15,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <input type="text" class="form-control" name="search" value="Search...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+                                </span>
+                </li>
                 <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                 <li class="hidden">
                     <a class="page-scroll" href="#page-top"></a>
@@ -31,7 +37,7 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-align-justify"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="/mammals">Species</a></li>
-                        <li><a href="/statistics">Statistics</a></li>
+                        <li><a href="/endangeredWildlife">Endangered wildlife</a></li>
                         <li><a href="/news">News</a></li>
                         <li role="separator" class="divider"></li>
                         <li class="dropdown-header">Learn more about</li>

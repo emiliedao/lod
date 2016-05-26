@@ -52,8 +52,8 @@
     </servlet>
 
     <servlet>
-        <servlet-name>StatisticsServlet</servlet-name>
-        <servlet-class>servlet.StatisticsServlet</servlet-class>
+        <servlet-name>EndangeredWildlifeServlet</servlet-name>
+        <servlet-class>servlet.EndangeredWildlifeServlet</servlet-class>
     </servlet>
 
     <jsp-config>
