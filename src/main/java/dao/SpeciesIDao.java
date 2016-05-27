@@ -17,4 +17,5 @@ public interface SpeciesIDao extends GenericIDao<Species> {
     List<Species> findByConservationStatus(ConservationStatus status);
     int countByConservationStatus(ConservationStatus status);
     int countAll();
+    List<String> search(String name);
 }

@@ -96,4 +96,15 @@ public class SpeciesDao extends GenericDaoHibernate<Species> implements SpeciesI
         s.close();
         return count;
     }
+
+    public List<String> search(String name) {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        Query q = s.createQuery("select name from Species where name like:name");
+        q.setString("name", "%" + name + "%");
+        List<String> species = q.list();
+        t.commit();
+        s.close();
+        return species;
+    }
 }
