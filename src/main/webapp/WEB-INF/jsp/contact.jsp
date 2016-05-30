@@ -172,4 +172,7 @@
 <script src="js/jqBootstrapValidation.js"></script>
 <script src="js/contact_me.js"></script>
 
+<script src="js/search.js"></script>
+
+
 </body>

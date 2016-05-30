@@ -21,31 +21,23 @@ import java.util.List;
 public class SearchServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//        String searchValue = request.getParameter("term");
-//        System.out.println("Data from ajax call " + searchValue);
-//
-//        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
-//        List<String> species = speciesDao.search(searchValue);
-//
-//        String searchList = new Gson().toJson(species);
-//        System.out.println(searchList);
-//        response.getWriter().write(searchList);
+
+        String searchValue = request.getParameter("value");
+
+//        Get the list containing the search value entered by the user
+        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+        List<String> species = speciesDao.search(searchValue);
+        String searchList = new Gson().toJson(species);
+        System.out.println(searchList);
+
+//        Send response
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(searchList);
 
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String searchValue = request.getParameter("searchValue");
-//        System.out.println("Data from ajax call " + searchValue);
-//
-//        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
-//        List<String> species = speciesDao.search(searchValue);
-//
-//        String searchList = new Gson().toJson(species);
-//        response.setContentType("text/plain");
-////        System.out.println(searchList);
-//        response.getWriter().write(searchList);
-
 
     }
 

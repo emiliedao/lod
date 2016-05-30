@@ -1,32 +1,21 @@
 /**
  * Created by emiliedao on 5/27/16.
  */
-// $(document).ready(function() {
-//     $("#search-value").autocomplete({
-//         source : function(request, response) {
-//             $.ajax({
-//                 serviceUrl: "/search",
-//                 type: "GET",
-//                 data: {
-//                     term: request.term
-//                 },
-//                 dataType: "json",
-//                 success: function (data) {
-//                     console.log("SUCCESS: ", data);
-//                     display(data);
-//                     response(data);
-//                 }
-//             });
-//         }
-//     });
-// });
+$(document).ready(function() {
 
-// $(document).ready(function() {
-//     // $("#search-value").click(function(){
-//     //     $searchValue = document.getElementById("search-value").value;
-//     //     $.post("SearchServlet", {searchValue:$searchValue}, function(data) {
-//     //         alert(data);
-//     //         $("#search-results").html(data);
-//     //     });
-//     // });
-// });
+    $("#search-value").keyup(
+        function(request, response) {
+            $("#search-results").empty();
+            var $value = $("#search-value").val();
+
+            $.get("search", {value: $value},  function(response) {
+                $.each(response, function(index, item) {
+                    var $a = $("<a>").text(item);
+                    $a.attr("href", "/species?name=" + encodeURI(item));
+
+                    $("#search-results").append($("<li>").append($a));
+                });
+            });
+
+    });
+});

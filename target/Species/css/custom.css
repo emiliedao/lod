@@ -59,3 +59,12 @@ body {
     font-size: 18px;
     line-height: 160px;
 }
+
+#search-results {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+#search-results li {
+    max-width: 250px;
+}

@@ -16,14 +16,6 @@ public class HomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        String name = request.getParameter("name");
-//        String message = "Hello " + name;
-//        request.setAttribute("msg", message);
-
-        String title = "Linked Open Data";
-        request.setAttribute("title", title);
-
-
         this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/index.jsp").forward(request, response);
     }
 

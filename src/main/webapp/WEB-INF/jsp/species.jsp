@@ -198,6 +198,7 @@
 <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
 <script src="js/map.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="js/search.js"></script>
 
 
 </body>

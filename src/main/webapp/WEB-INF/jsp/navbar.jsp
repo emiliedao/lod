@@ -43,16 +43,13 @@
                 </li>
             </ul>
 
+
             <div class="col-sm-3 col-md-3 pull-right">
                 <form class="navbar-form search-form" role="search" method="get">
                     <div class="input-group">
                         <input type="text" class="form-control dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" placeholder="Search" name="q" id="search-value">
 
-                        <ul class="dropdown-menu" id="search-results">
-                            <li><a href="#">Result #1</a></li>
-                            <li><a href="#">Result #2</a></li>
-                            <li><a href="#">Result #3</a></li>
-                        </ul>
+                        <ul class="dropdown-menu" id="search-results"></ul>
 
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit" id="search-button"><i class="glyphicon glyphicon-search"></i></button>
@@ -61,6 +58,10 @@
 
                 </form>
 
+                <div id="somediv">
+
+                </div>
+
             </div>
 
         </div>
@@ -68,6 +69,3 @@
     </div>
     <!-- /.container -->
 </nav>
-
-<%--<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>--%>
-<%--<script src="js/search.js"></script>--%>

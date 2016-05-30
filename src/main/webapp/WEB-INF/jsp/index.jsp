@@ -263,6 +263,9 @@
 
 <script src="js/scrolling-nav.js"></script>
 
+<script src="js/search.js"></script>
+
+
 </body>
 
 </html>

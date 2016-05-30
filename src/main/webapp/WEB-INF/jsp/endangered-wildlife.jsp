@@ -125,5 +125,6 @@
 <script src="js/speciesByStatus.js"></script>
 <script src="js/criticallyEndangeredSpeciesByCountry.js"></script>
 <script src="js/endangeredSpeciesByCountry.js"></script>
+<script src="js/search.js"></script>
 
 </body>
