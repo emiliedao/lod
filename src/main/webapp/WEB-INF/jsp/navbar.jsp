@@ -45,9 +45,9 @@
 
 
             <div class="col-sm-3 col-md-3 pull-right">
-                <form class="navbar-form search-form" role="search" method="get">
+                <form class="navbar-form search-form" role="search" method="post" action="/search">
                     <div class="input-group">
-                        <input type="text" class="form-control dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" placeholder="Search" name="q" id="search-value">
+                        <input type="text" class="form-control dropdown-toggle" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false" placeholder="Search" id="search-value" name="value">
 
                         <ul class="dropdown-menu" id="search-results"></ul>
 
@@ -57,10 +57,6 @@
                     </div>
 
                 </form>
-
-                <div id="somediv">
-
-                </div>
 
             </div>
 

@@ -39,6 +39,16 @@ public class SearchServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String searchValue = request.getParameter("value");
+
+//        Get the list containing the search value entered by the user
+        SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+        List<String> species = speciesDao.search(searchValue);
+
+        request.setAttribute("results", species);
+
+        this.getServletContext().getRequestDispatcher("/WEB-INF/jsp/search.jsp").forward(request, response);
+
     }
 
 }
