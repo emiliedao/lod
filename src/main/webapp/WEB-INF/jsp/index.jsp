@@ -134,7 +134,7 @@
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Endangered wildlife</h2>
 
-                    <p>Etiam pellentesque facilisis iaculis. Curabitur in erat a quam sagittis porttitor. Vivamus iaculis purus quis turpis vestibulum, non euismod purus pulvinar. Curabitur consequat, tortor ut condimentum tempor, urna justo dignissim ipsum, ultrices egestas nunc velit et nisi.</p>
+                    <p>Species are classified in a particular way. Notably, the IUCN Red List divided wildlife into different categories of conservation, according to their occurrences in the world. You can here consult global statistics to know where the most endangered species live, and in what proportion.</p>
 
                     <p><a class="btn btn-primary" href="/endangeredWildlife">Consult statistics</a></p>
 
@@ -164,7 +164,7 @@
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">News</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tempor sollicitudin nisl. Vivamus tortor dui, placerat ut auctor vel, euismod quis arcu. Maecenas sed libero faucibus, interdum tortor tincidunt, feugiat turpis.  </p>
+                    <p>The best way to stay aware of the situation of our world's species is to regularly consult some news. We have selected different sources for you so that you can easily find the most recent news about endangered species. You can also search some news related to the topics of your choice.</p>
 
                     <p><a class="btn btn-primary" href="/news">Search news</a></p>
 

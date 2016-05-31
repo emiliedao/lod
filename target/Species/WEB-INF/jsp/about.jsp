@@ -69,14 +69,21 @@
 
     <!-- Intro Content -->
     <div class="row">
-        <div class="col-md-6">
-            <img class="img-responsive" src="http://placehold.it/750x450" alt="">
-        </div>
-        <div class="col-md-6">
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <img class="img-responsive img-thumbnail img-hover" src="img/leopard.jpg" alt=""
+                     style="margin-right: 17px; margin-bottom: 10px; ">
+            </div>
+
             <h2>About this application</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed voluptate nihil eum consectetur similique? Consectetur, quod, incidunt, harum nisi dolores delectus reprehenderit voluptatem perferendis dicta dolorem non blanditiis ex fugiat.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, magni, aperiam vitae illum voluptatum aut sequi impedit non velit ab ea pariatur sint quidem corporis eveniet. Odit, temporibus reprehenderit dolorum!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et, consequuntur, modi mollitia corporis ipsa voluptate corrupti eum ratione ex ea praesentium quibusdam? Aut, in eum facere corrupti necessitatibus perspiciatis quis?</p>
+
+            <p>This application was created in the context of a ten-week internship in Computer Science. For this internship, I travelled all the way from Bordeaux to Japan, in the University of Tsukuba, and was welcomed by the Kitagawa Data Engineering laboratory.</p>
+
+            <p>The aim of the internship was to create an application using Linked Open Data. In computing, Linked Data refers to a method of publishing information so that it can be interconnected. Rather than providing text content only readable by humans, Linked Data allows us to share information also readable by computers, enabling data from different sources to be connected and queried. The Open term simply means that the data is open content.</p>
+
+            <p>To build this application, I used three main sources of data, as mentioned in the home page: DBpedia, BBC Wildlife Finder and the IUCN Red List. DBpedia provided the list of species for every family, as well as the basic information about each species, including the description, the picture, and the conservation status. The data was retrieved through DBpedia's SPARQL endpoint. BBC Wildlife finder provided the classification of species, including mammals, orders, and families, under the form of RDF files. Last but not least, the IUCN Red List provided the remaining information about each species, that is to say their location in the world, their type of habitats, the threats concerning them and the measures taken. It also provided the data used to build the statistics.</p>
+
+            <p>I chose to work on the topic of endangered species because it is a very important topical issue, as humans are constantly destroying the world that surrounds us. I find essential to stay aware of the situation we are putting the Earth through, as well as all the species that we are disturbing, and too often leading to their extinction for our own interests. Due to the number of species, I chose to restrain the application to the mammals, at least for the basic presentation of each species.</p>
         </div>
     </div>
     <!-- /.row -->

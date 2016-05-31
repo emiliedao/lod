@@ -28,7 +28,7 @@ public class SearchServlet extends HttpServlet {
         SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
         List<String> species = speciesDao.search(searchValue);
         String searchList = new Gson().toJson(species);
-        System.out.println(searchList);
+//        System.out.println(searchList);
 
 //        Send response
         response.setContentType("application/json");
