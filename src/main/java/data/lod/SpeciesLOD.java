@@ -92,6 +92,8 @@ public class SpeciesLOD extends LOD {
         String formattedName = species.getScientificName().replace(" ", "%20");
         url = "http://apiv3.iucnredlist.org/api/v3/habitats/species/name/" + formattedName + "?token=" + IUCN_Token;
 
+        System.out.println(species.getName() + " " + url);
+
         try {
             String jsonString = IOUtils.toString(new URL(url));
 
@@ -107,11 +109,11 @@ public class SpeciesLOD extends LOD {
                 String label = (String)o.get("habitat");
                 Habitat habitat = habitatDao.findByLabel(label);
 
-//                if (habitat == null) {
-//                    habitat = new Habitat();
-//                    habitat.setLabel(label);
-//                    habitatDao.create(habitat);
-//                }
+                if (habitat == null) {
+                    habitat = new Habitat();
+                    habitat.setLabel(label);
+                    habitatDao.create(habitat);
+                }
 
                 species.addHabitat(habitat);
                 speciesDao.update(species);
@@ -248,6 +250,76 @@ public class SpeciesLOD extends LOD {
         }
     }
 
+    public void loadOtherSpecies(Family family) {
+
+        String speciesQuery = "PREFIX dbo: <http://dbpedia.org/ontology/>\n" +
+                "PREFIX dbp: <http://dbpedia.org/property/>\n" +
+                "PREFIX dbr: <http://dbpedia.org/resource/>\n" +
+                "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n" +
+                "\n" +
+                "SELECT DISTINCT ?name ?scientificName ?description ?thumbnail ?conservationStatus\n" +
+                "WHERE \n" +
+                "{\n" +
+                "?species dbo:family dbr:" + family.getName() + " ;\n" +
+                " rdfs:label ?name ;\n" +
+                " dbp:trinomial ?scientificName ;\n" +
+                " dbo:abstract ?description ;\n" +
+                " dbo:thumbnail ?thumbnail ;\n" +
+                " dbo:conservationStatus ?conservationStatus .\n" +
+                "\n" +
+                "FILTER (\n" +
+                "  langMatches(lang(?description),\"en\") &&\n" +
+                "  langMatches(lang(?name),\"en\")\n" +
+                ")\n" +
+                "}";
+        Query query = QueryFactory.create(speciesQuery);
+        QueryExecution qe = QueryExecutionFactory.sparqlService(sparqlEndpoint, query);
+
+        try {
+
+            ResultSet results = qe.execSelect();
+            SpeciesDao speciesDao = DaoFactory.getSpeciesDao();
+            ConservationStatusDao conservationStatusDao = DaoFactory.getConservationStatusDao();
+
+            for (; results.hasNext(); ) {
+                QuerySolution soln = results.nextSolution();
+
+                String name = soln.getLiteral("name").getString();
+                Species species = speciesDao.findByName(name);
+
+                if (species == null) {
+//                    Create species if not created yet
+                    species = new Species();
+                    species.setName(name);
+                    species.setScientificName(soln.getLiteral("scientificName").getString());
+                    species.setDescription(soln.getLiteral("description").toString());
+                    species.setImage(soln.getResource("thumbnail").toString());
+//                    Conservation Status
+                    String status = soln.getLiteral("conservationStatus").toString();
+                    ConservationStatus conservationStatus = conservationStatusDao.findById(status);
+                    if (conservationStatus != null) {
+                        species.setConservationStatus(conservationStatus);
+                    }
+
+                    species.setFamily(family);
+
+                    speciesDao.create(species);
+                    System.out.println(family.getName() + " : " + species.getName());
+                }
+
+                else {
+                    System.out.println(family.getName() + " : " + species.getName() + " already exists");
+                }
+
+            }
+
+        } finally {
+//      Important - free up resources used running the query
+            qe.close();
+
+        }
+    }
+
     public void load() {
         FamilyDao familyDao = DaoFactory.getFamilyDao();
         ArrayList<Family> families = (ArrayList<Family>) familyDao.findAll(Family.class);
@@ -262,14 +334,13 @@ public class SpeciesLOD extends LOD {
 //        ArrayList<Species> species = (ArrayList<Species>) speciesDao.findAll(Species.class);
 
         FamilyDao familyDao = DaoFactory.getFamilyDao();
-        Family family = familyDao.findById(38);
-        System.out.println(family.toString());
-        List<Species> species = family.getSpecies();
-        System.out.println("List : " + species.size());
-        Set<Species> speciesSet = new HashSet<Species>(family.getSpecies());
-        System.out.println("Set : " + speciesSet.size());
+        Family family = familyDao.findById(29);
+//        loadOtherSpecies(family);
 
-        for (Species s : speciesSet) {
+        System.out.println(family.toString());
+        Set<Species> species = family.getSpecies();
+
+        for (Species s : species) {
             System.out.println(s.toString());
 
             if (s.getHabitats().isEmpty()) {
@@ -283,7 +354,7 @@ public class SpeciesLOD extends LOD {
             if (s.getMeasures().isEmpty()) {
                 loadMeasures(s);
             }
-
+//
 //            if (s.getCountries().isEmpty()) {
 //                loadCountries(s);
 //            }

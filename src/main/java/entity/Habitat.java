@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -18,8 +18,8 @@ public class Habitat {
     @Column(name = "label")
     private String label;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "habitats")
-    private List<Species> species;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "habitats")
+    private Set<Species> species;
 
 
     public Habitat() {
@@ -46,11 +46,11 @@ public class Habitat {
         this.label = label;
     }
 
-    public List<Species> getSpecies() {
+    public Set<Species> getSpecies() {
         return species;
     }
 
-    public void setSpecies(List<Species> species) {
+    public void setSpecies(Set<Species> species) {
         this.species = species;
     }
 

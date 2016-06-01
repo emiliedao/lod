@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -17,8 +17,8 @@ public class Country {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "countries")
-    private List<Species> species;
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "countries")
+    private Set<Species> species;
 
     public Country() {
     }

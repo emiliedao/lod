@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -19,9 +19,9 @@ public class ConservationStatus {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "conservationStatus",
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "conservationStatus",
             cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
-    private List<Species> species;
+    private Set<Species> species;
 
     public ConservationStatus() {
     }

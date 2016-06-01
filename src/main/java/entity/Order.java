@@ -1,7 +1,7 @@
 package entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 4/28/16.
@@ -28,8 +28,8 @@ public class Order {
     @JoinColumn(name = "class_id")
     private BiologyClass biologyClass;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "order", cascade = CascadeType.ALL)
-    private List<Family> families;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "order", cascade = CascadeType.ALL)
+    private Set<Family> families;
 
     public Order() {
     }
@@ -89,11 +89,11 @@ public class Order {
         this.biologyClass = biologyClass;
     }
 
-    public List<Family> getFamilies() {
+    public Set<Family> getFamilies() {
         return families;
     }
 
-    public void setFamilies(List<Family> families) {
+    public void setFamilies(Set<Family> families) {
         this.families = families;
     }
 

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by emiliedao on 5/12/16.
@@ -27,7 +28,7 @@ public class OrderServlet extends HttpServlet {
 
         if (order != null) {
             request.setAttribute("order", order);
-            List<Family> families = order.getFamilies();
+            Set<Family> families = order.getFamilies();
 
             request.setAttribute("families", families);
         }

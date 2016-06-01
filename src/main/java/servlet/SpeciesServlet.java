@@ -33,13 +33,13 @@ public class SpeciesServlet extends HttpServlet {
         Species species = speciesDao.findByName(speciesName);
         request.setAttribute("species", species);
 
-        Set<Habitat> habitats = new HashSet<Habitat>(species.getHabitats());
+        Set<Habitat> habitats = species.getHabitats();
         request.setAttribute("habitats", habitats);
 
-        Set<Threat> threats = new HashSet<Threat>(species.getThreats());
+        Set<Threat> threats = species.getThreats();
         request.setAttribute("threats", threats);
 
-        Set<Measure> measures = new HashSet<Measure>(species.getMeasures());
+        Set<Measure> measures = species.getMeasures();
         request.setAttribute("measures", measures);
 
 //        Get countries occurrences
