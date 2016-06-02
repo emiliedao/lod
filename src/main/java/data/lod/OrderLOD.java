@@ -53,9 +53,6 @@ public class OrderLOD extends LOD {
 
             ResultSet results = qe.execSelect();
 
-//            Output query results
-//            ResultSetFormatter.out(System.out, results, query);
-
             for ( ; results.hasNext() ; )
             {
                 QuerySolution soln = results.nextSolution() ;

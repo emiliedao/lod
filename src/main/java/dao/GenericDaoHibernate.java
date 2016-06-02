@@ -27,6 +27,22 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
         s.close();
     }
 
+    public void update(T object) {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.update(object);
+        t.commit();
+        s.close();
+    }
+
+    public void delete(T object) {
+        Session s = HibernateUtils.getSessionFactory().openSession();
+        Transaction t = s.beginTransaction();
+        s.delete(object);
+        t.commit();
+        s.close();
+    }
+
     public T findById(int id) {
         Session s = HibernateUtils.getSessionFactory().openSession();
         Transaction t = s.beginTransaction();
@@ -43,22 +59,6 @@ public abstract class GenericDaoHibernate<T> implements GenericIDao<T> {
         t.commit();
         s.close();
         return object;
-    }
-
-    public void update(T object) {
-        Session s = HibernateUtils.getSessionFactory().openSession();
-        Transaction t = s.beginTransaction();
-        s.update(object);
-        t.commit();
-        s.close();
-    }
-
-    public void delete(T object) {
-        Session s = HibernateUtils.getSessionFactory().openSession();
-        Transaction t = s.beginTransaction();
-        s.delete(object);
-        t.commit();
-        s.close();
     }
 
     public List<T> findAll(Class<T> type) {

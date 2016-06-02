@@ -18,14 +18,15 @@ import java.util.*;
  */
 public class StatisticsData extends Data {
     public void load() {
-//
+
 //        String speciesByStatus = getSpeciesByStatus();
 //        System.out.println(speciesByStatus);
 
-//        ConservationStatusDao conservationStatusDao = DaoFactory.getConservationStatusDao();
-//        List<ConservationStatus> statusList = conservationStatusDao.findAll(ConservationStatus.class);
-//        String speciesByCountry = getSpeciesByCountry(statusList.get(2));
-//        System.out.println(speciesByCountry);
+        ConservationStatusDao conservationStatusDao = DaoFactory.getConservationStatusDao();
+        List<ConservationStatus> statusList = conservationStatusDao.findAll(ConservationStatus.class);
+//        System.out.println(statusList.get(0).getLabel());
+        String speciesByCountry = getSpeciesByCountry(statusList.get(0));
+        System.out.println(speciesByCountry);
 
     }
 

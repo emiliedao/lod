@@ -51,7 +51,7 @@ $(function () {
                 ['Myanmar', 3],
                 ['Nigeria', 3],
                 ['South Africa', 3],
-                ['Tanzania, United Republic of', 3],
+                ['Tanzania, United Republic of', 3]
 
                 // ['Bangladesh', 2],
                 // ['Botswana', 2],

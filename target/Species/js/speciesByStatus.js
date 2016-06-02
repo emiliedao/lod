@@ -31,26 +31,43 @@ $(function () {
         series: [{
             name: 'Proportion',
             colorByPoint: true,
-            data: [
-                {name: 'Critically endangered', y: 4.0, color: 'rgb(255,116,116)'},
-                {
-                    name: 'Data deficient',
-                    y: 5.0,
-                    color: '#434348'
-                }, {name: 'Endangered', y: 10.0, color: 'rgb(255,117,153)'}, {
-                    name: 'Exctinct in the wild',
-                    y: 0.0,
-                    color: '#e7e7e7'
-                }, {name: 'Extinct', y: 1.0, color: '#8085e9'}, {
-                    name: 'Least concern',
-                    y: 46.0,
-                    color: '#90ed7d'
-                }, {name: 'Not evaluated', y: 0.0, color: '#e7e7e7'}, {
-                    name: 'Near threatened',
-                    y: 6.0,
-                    color: '#e4d354'
-                }, {name: 'Vulnerable', y: 12.0, color: '#f7a35c'}
-            ]
+            data: [{
+                name: 'Critically endangered',
+                y: 6.0,
+                color: 'rgb(255,116,116)'
+            }, {
+                name: 'Data deficient',
+                y: 4.0,
+                color: '#434348'
+            }, {
+                name: 'Endangered',
+                y: 12.0,
+                color: 'rgb(255,117,153)'
+            }, {
+                name: 'Exctinct in the wild',
+                y: 0.0,
+                color: '#e7e7e7'
+            }, {
+                name: 'Extinct',
+                y: 2.0,
+                color: '#8085e9'
+            }, {
+                name: 'Least concern',
+                y: 43.0,
+                color: '#90ed7d'
+            }, {
+                name: 'Not evaluated',
+                y: 0.0,
+                color: '#e7e7e7'
+            }, {
+                name: 'Near threatened',
+                y: 6.0,
+                color: '#e4d354'
+            }, {
+                name: 'Vulnerable',
+                y: 12.0,
+                color: '#f7a35c'
+            }]
 
         }]
     });
