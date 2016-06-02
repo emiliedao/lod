@@ -112,7 +112,7 @@
 
                         <%-- Current letter active --%>
                         <c:otherwise>
-                            <li ${ (l.key.equals(view)) ? 'class="active"' : '' }>
+                            <li ${ (l.key.equals(view.charAt(0))) ? 'class="active"' : '' }>
                         </c:otherwise>
                     </c:choose>
 
